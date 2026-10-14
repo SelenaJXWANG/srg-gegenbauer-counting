@@ -1,0 +1,4 @@
+cvxpy==1.9.3
+clarabel==0.11.1
+numpy==2.5.4
+scipy==1.18.1

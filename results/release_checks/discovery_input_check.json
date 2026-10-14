@@ -1,0 +1,33 @@
+{
+  "pinned_inputs_checked": 62,
+  "model_inputs": 18,
+  "programs_syntax_checked": 9,
+  "model_sha256": {
+    "data/pure405/atlas/graphs.txt": "37d7b17324643840b5ff96269b987cfbdd2696d224eeb1bb35ec9730227f5f90",
+    "data/pure405/atlas/map1.bin": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "data/pure405/atlas/map2.bin": "7b11c1133330cd161071bf23a0c9b6ce5320a8f3a0f83620035a72be46df4104",
+    "data/pure405/atlas/map3.bin": "7bebe91c9e9669788ffb265eaceea6e6d00f67b45739e562c34c54b47c816bbe",
+    "data/pure405/atlas/map4.bin": "80fc2df0799de4b1ab2c68e46f3ff0d4b491a9b1f2f843b7d20abc473b722c1a",
+    "data/pure405/atlas/map5.bin": "fc2d7e585550db3c2af45ab5cbd5a6220acc4f29be72b9c993f0a11e62b61c86",
+    "data/pure405/atlas/map6.bin": "45bbbc9e7f81831c54018bef5cca6ee79378d4a766afe6a20c032470a7f89bc2",
+    "data/pure405/atlas/map7.bin": "0a857a4fb493e92d2ab799da1ce1d1ed9e08a846c256d7c04003a1416fb71d78",
+    "data/pure405/data/degree2/core_recipes_405.json": "08f739693ab7a91483639ab96a2e24169028658e4c5c8710b6d48f780a44678c",
+    "data/legacy_ten/rebuild_375/affine_recipes_375.json": "767e2e92627c664c59d1949d410002cb6aa24a619a1893768ddc0ea930f42847",
+    "data/legacy_ten/rebuild_375/forbidden_375.json": "3b28344aab201ce69dc5d835cc6b3c9300a786fd08166921103b743583e1a2a1",
+    "data/legacy_ten/rebuild_375/integer_moments.json": "6bd7b8c62a32cf158265fa20440556aee12b7b39044b27fb409f72fd0fbeab50",
+    "data/legacy_ten/rebuild_441/affine_recipes_441.json": "6eecba330a77c7d16041e8b5769b610015015b4a32281048168e1813803e2e7b",
+    "data/legacy_ten/rebuild_441/forbidden_441.json": "3b28344aab201ce69dc5d835cc6b3c9300a786fd08166921103b743583e1a2a1",
+    "data/legacy_ten/rebuild_441/integer_moments.json": "7686dcf1a47ebdc231cab2ce950db1aec15d158996b7da8e4a65da31f052229c",
+    "data/legacy_ten/rebuild_575/affine_recipes_575.json": "5ddbe17f14344f3e2c7b1efff14538aec579b7b11e237c6ff2a18e4502263134",
+    "data/legacy_ten/rebuild_575/forbidden_575.json": "3616a9e40ecdccd6bb45bd2b7de389b0317834bac433ad8c788e5e8a8f39a844",
+    "data/legacy_ten/rebuild_575/integer_moments.json": "a75c51cd07e371840dd6542e028752652d812038fad84f867d8fe4ec251e0cff"
+  },
+  "installed_versions": {
+    "cvxpy": null,
+    "clarabel": null,
+    "numpy": "2.3.5",
+    "scipy": null
+  },
+  "check": "PASS syntax and model input paths; no optimization executed",
+  "meaning": "Syntax and input resolution checked; optimization was not executed."
+}

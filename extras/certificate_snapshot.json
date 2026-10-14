@@ -1,0 +1,10 @@
+{
+  "snapshot_label": "2026-10-14 local certificate snapshot",
+  "status": "Local pre-release; no public repository revision has been assigned.",
+  "manifest": "extras/certificate_inputs.sha256",
+  "manifest_sha256": "58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b",
+  "number_of_fixed_files": 64,
+  "scope": "Fixed mathematical JSON/atlas data, exact verification engines, and the exact command/path-adapter files.",
+  "excluded": "PDF/TeX files, documentation, generated reports, optional numerical discovery code, and the manifest itself.",
+  "encoding": "UTF-8; LF line endings; each line is SHA-256, two spaces, repository-relative POSIX path; rows sorted lexicographically."
+}

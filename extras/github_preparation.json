@@ -1,0 +1,39 @@
+{
+  "prepared_utc": "2026-10-14T12:48:45.879148+00:00",
+  "source_archive_sha256": "2422d831eda606a8c0e7ad42505ae6414aa6dd3015eab97bc0e7ecab379f6fbc",
+  "status": "PREPARED_FOR_INITIAL_UPLOAD",
+  "manuscript_authors": [
+    "Zhen-Qi Liao",
+    "Jiaxin Wang",
+    "Wei-Hsuan Yu",
+    "Jianfeng Cai"
+  ],
+  "scope": "Ten parameter sets from the supplied article and its 405 supplement; no 288/300 theorem added.",
+  "fixed_input_manifest_sha256": "58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b",
+  "exact_verification": "PASS: five stages; fixed inputs unchanged",
+  "report": "results/release_checks/github_preparation_verification.json",
+  "github_repository": "https://github.com/SelenaJXWANG/srg-gegenbauer-counting",
+  "reuse_licenses": {
+    "code": "MIT",
+    "paper_and_certificates": "CC-BY-4.0"
+  },
+  "added_files": [
+    "CITATION.cff",
+    "CONTRIBUTING.md",
+    ".github/workflows/verify.yml",
+    "docs/github_publication_zh.md",
+    "docs/release_notes_v1.0.0.md",
+    "LICENSE",
+    "LICENSE-CC-BY-4.0.txt",
+    "LICENSES.md"
+  ],
+  "intended_github_repository": "https://github.com/SelenaJXWANG/srg-gegenbauer-counting",
+  "repository_name": "srg-gegenbauer-counting",
+  "owner": "SelenaJXWANG",
+  "ownership_model": "personal_repository_with_coauthor_collaborators",
+  "organization_not_created": "srg-counting-research was considered; latest instruction selects personal repository",
+  "publication_blocker": null,
+  "collaborator_accounts": "pending; no invitations sent",
+  "hosted_verification": "pending initial upload",
+  "github_connection": "confirmed SelenaJXWANG; repository push permission verified"
+}

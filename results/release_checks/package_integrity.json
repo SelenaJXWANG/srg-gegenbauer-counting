@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "exact_stages": 5,
+  "python_files_syntax_checked": 31,
+  "markdown_links": "all local targets exist",
+  "private_machine_paths": "none in distributed text files",
+  "paper_files": 4,
+  "readme_languages": [
+    "English",
+    "Traditional Chinese",
+    "Simplified Chinese"
+  ],
+  "readme_commands_parameters_hash_match": true,
+  "no_nested_archives_or_caches": true,
+  "old_and_article_405_certificates": "separate named subdirectories",
+  "numerical_optimization_executed": false,
+  "release_date": "2026-10-14",
+  "certificate_manifest_sha256": "58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b"
+}

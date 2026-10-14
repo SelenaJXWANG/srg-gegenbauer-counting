@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use these certificates or verification programs, please cite the accompanying manuscript and identify the release used."
+type: software
+license: MIT
+repository-code: "https://github.com/SelenaJXWANG/srg-gegenbauer-counting"
+title: "Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting: certificates and verification programs"
+authors:
+  - family-names: Liao
+    given-names: Zhen-Qi
+  - family-names: Wang
+    given-names: Jiaxin
+  - family-names: Yu
+    given-names: Wei-Hsuan
+  - family-names: Cai
+    given-names: Jianfeng
+keywords:
+  - strongly regular graphs
+  - induced subgraph counting
+  - Gegenbauer positivity
+  - exact rational certificates
+preferred-citation:
+  type: unpublished
+  title: "Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting"
+  authors:
+    - family-names: Liao
+      given-names: Zhen-Qi
+    - family-names: Wang
+      given-names: Jiaxin
+    - family-names: Yu
+      given-names: Wei-Hsuan
+    - family-names: Cai
+      given-names: Jianfeng
+  year: 2026
+  notes: "Manuscript dated 14 October 2026. Code: MIT; paper and certificates: CC BY 4.0. Repository: SelenaJXWANG/srg-gegenbauer-counting. No release, arXiv identifier or DOI is assigned."

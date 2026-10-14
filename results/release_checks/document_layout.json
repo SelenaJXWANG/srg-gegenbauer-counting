@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "main_pages": 25,
+  "supplement_pages": 14,
+  "native_compilation": "Both final sources compiled successfully in the built-in editor.",
+  "export_warnings": [],
+  "visual_review": {
+    "main_changed_pages": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "main_unchanged_pages_pixel_identical_to_reviewed_previous_revision": true,
+    "supplement_changed_pages": [
+      14
+    ],
+    "supplement_other_pages_pixel_identical_to_reviewed_previous_revision": true,
+    "render_dpi": 95,
+    "findings": "All changed pages reviewed. No clipping, overlaps or unresolved references."
+  },
+  "changes_reviewed": [
+    "Added explicit Supplement 405 citation for complete coefficients",
+    "Added the strict diagonal-dominance proof for six-point reference Gram matrices",
+    "Restricted the supplementary all-degree limitation to the five-point real-count relaxation",
+    "Removed stale authoring-only comments"
+  ],
+  "existing_numerical_tables_byte_preserved": true,
+  "files": {
+    "Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex": {
+      "sha256": "054b1c60c38b121a0a9794068da807bc85e453e4ca5778a7a703f9ed5ae19f4a",
+      "bytes": 83042
+    },
+    "Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf": {
+      "sha256": "f3eefcc94e6f32c3be3a3d1514ae0e7d105316b7a7f4a8875c3bd58d9c919a43",
+      "bytes": 208163
+    },
+    "Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex": {
+      "sha256": "150badf6b6dc9db5a1dd1bfb8492c844c0990a5aa5b1787ad04e258a9e50fe62",
+      "bytes": 68361
+    },
+    "Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf": {
+      "sha256": "dbd97fc026292ed6fe1eaa97bd62323658be4d7107c41f90a1358e43a21a1f5a",
+      "bytes": 114466
+    }
+  }
+}

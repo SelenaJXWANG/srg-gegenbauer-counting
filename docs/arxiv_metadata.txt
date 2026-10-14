@@ -1,0 +1,15 @@
+Title:
+Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting
+
+Authors (in this order):
+Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai
+
+Abstract:
+This paper develops a natural extension of the multipoint spherical semidefinite method of Liao and Yu (arXiv:2609.37901), studying the interaction between semidefinite programming and strongly regular graph counting. Starting from the positive semidefinite kernels furnished by Gegenbauer polynomials, we express weighted kernel sums and counting identities in the same labelled induced-subgraph counts. Eliminating the counting equations gives a semidefinite feasibility problem. Numerical dual solutions guide the construction of rational certificates, whose contradiction identities are verified exactly. Our aim is a systematic method that treats many parameter sets through the same construction. For least eigenvalue $-3$, it gives new counting certificates for $(351,140,73,44)$, $(550,162,75,36)$, $(703,182,81,35)$ and $(1344,221,88,26)$, previously excluded by Liao and Yu, and for six additional parameter sets: (375,102,45,21), (405,132,63,33), (441,88,35,13), (476,133,60,28), (540,147,66,30), (575,112,45,16). Seven certificates use Gegenbauer positivity and counting information alone at the displayed orders. The cases $v=375,441,575$ additionally use proved short-vector restrictions, unique vertex extensions, and integer common-neighbour inequalities. The proofs end in displayed inequalities with incompatible signs. Their justification is given by the dual identities and the proved positivity and counting relations; accompanying code automates the longer rational arithmetic.
+
+Abstract length: 1499 characters (including spaces).
+
+This plain-text abstract is for the arXiv metadata form. The manuscript retains its typeset abstract, references, and two-row parameter display.
+The copied abstract uses no document-specific citation commands or environments.
+
+Metadata guidance: https://info.arxiv.org/help/prep.html

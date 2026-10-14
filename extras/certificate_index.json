@@ -1,0 +1,224 @@
+{
+  "usage": "Use code/verify.py to stage the preserved engines; do not execute individual preserved engines against the public layout.",
+  "certificates": [
+    {
+      "parameters": [
+        351,
+        140,
+        73,
+        44
+      ],
+      "directory": "results/certificates/351_140_73_44",
+      "exact_input": "results/certificates/351_140_73_44/raw_certificate.json",
+      "presentation_checker": "code/verification/verify_expanded_certificates.py",
+      "paper_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "note": "Stored normalization is converted to the labelled-count convention of the printed certificate.",
+      "supporting_exact_inputs": [
+        "results/certificates/351_140_73_44/raw_certificate.json",
+        "results/certificates/351_140_73_44/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        375,
+        102,
+        45,
+        21
+      ],
+      "directory": "results/certificates/375_102_45_21",
+      "exact_input": "results/certificates/375_102_45_21/exact_certificate.json",
+      "arithmetic_checker": "code/verification/verify_integer_moments_and_margins.py",
+      "presentation_checker": "code/verification/verify_article_metadata.py",
+      "note": "Section 4 uses the accompanying structural sources and exact residual bound.",
+      "supporting_exact_inputs": [
+        "results/certificates/375_102_45_21/affine_counting_equations.json",
+        "results/certificates/375_102_45_21/exact_certificate.json",
+        "results/certificates/375_102_45_21/exact_counting_elimination.json",
+        "results/certificates/375_102_45_21/forbidden_configurations.json",
+        "results/certificates/375_102_45_21/gegenbauer_counting_model.json",
+        "results/certificates/375_102_45_21/integer_common_neighbour_moments.json",
+        "results/certificates/375_102_45_21/positive_semidefinite_completion_constraints.json"
+      ]
+    },
+    {
+      "parameters": [
+        405,
+        132,
+        63,
+        33
+      ],
+      "directory": "results/certificates/405_132_63_33",
+      "exact_input": "results/certificates/405_132_63_33/ordinary_counting_certificate/exact_certificate.json",
+      "counting_model": "results/certificates/405_132_63_33/ordinary_counting_certificate/counting_model.json",
+      "presentation_checker": "code/verification/verify_expanded_certificates.py",
+      "paper_source": [
+        "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+        "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex"
+      ],
+      "note": "The ordinary-counting certificate supplies the article. The earlier structural certificate is a distinct alternative.",
+      "supporting_exact_inputs": [
+        "results/certificates/405_132_63_33/ordinary_counting_certificate/counting_model.json",
+        "results/certificates/405_132_63_33/ordinary_counting_certificate/exact_certificate.json"
+      ],
+      "retained_alternative_inputs": [
+        "results/certificates/405_132_63_33/earlier_structural_certificate/raw_certificate.json",
+        "results/certificates/405_132_63_33/earlier_structural_certificate/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        441,
+        88,
+        35,
+        13
+      ],
+      "directory": "results/certificates/441_88_35_13",
+      "exact_input": "results/certificates/441_88_35_13/exact_certificate.json",
+      "arithmetic_checker": "code/verification/verify_integer_moments_and_margins.py",
+      "presentation_checker": "code/verification/verify_article_metadata.py",
+      "note": "Section 4 uses the accompanying structural sources and exact residual bound.",
+      "supporting_exact_inputs": [
+        "results/certificates/441_88_35_13/affine_counting_equations.json",
+        "results/certificates/441_88_35_13/exact_certificate.json",
+        "results/certificates/441_88_35_13/exact_counting_elimination.json",
+        "results/certificates/441_88_35_13/forbidden_configurations.json",
+        "results/certificates/441_88_35_13/gegenbauer_counting_model.json",
+        "results/certificates/441_88_35_13/integer_common_neighbour_moments.json",
+        "results/certificates/441_88_35_13/positive_semidefinite_completion_constraints.json"
+      ]
+    },
+    {
+      "parameters": [
+        476,
+        133,
+        60,
+        28
+      ],
+      "directory": "results/certificates/476_133_60_28",
+      "exact_input": "results/certificates/476_133_60_28/raw_certificate.json",
+      "presentation_checker": "code/verification/verify_expanded_certificates.py",
+      "paper_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "note": "Stored normalization is converted to the labelled-count convention of the printed certificate.",
+      "supporting_exact_inputs": [
+        "results/certificates/476_133_60_28/raw_certificate.json",
+        "results/certificates/476_133_60_28/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        540,
+        147,
+        66,
+        30
+      ],
+      "directory": "results/certificates/540_147_66_30",
+      "printed_certificate_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "printed_table_labels": [
+        "tab:direct-functions",
+        "tab:direct-coeff-a"
+      ],
+      "presentation_checker": "code/verification/verify_displayed_tables.py",
+      "independent_reconstruction": "code/verification/verify_1344_certificate.py",
+      "note": "The actual printed directions and coefficients are parsed from the main TeX. Retained raw JSON may represent another certificate.",
+      "retained_alternative_inputs": [
+        "results/certificates/540_147_66_30/raw_certificate.json",
+        "results/certificates/540_147_66_30/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        550,
+        162,
+        75,
+        36
+      ],
+      "directory": "results/certificates/550_162_75_36",
+      "printed_certificate_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "printed_table_labels": [
+        "tab:direct-functions",
+        "tab:direct-coeff-b"
+      ],
+      "presentation_checker": "code/verification/verify_displayed_tables.py",
+      "independent_reconstruction": "code/verification/verify_1344_certificate.py",
+      "note": "The actual printed directions and coefficients are parsed from the main TeX. Retained raw JSON may represent another certificate.",
+      "retained_alternative_inputs": [
+        "results/certificates/550_162_75_36/raw_certificate.json",
+        "results/certificates/550_162_75_36/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        575,
+        112,
+        45,
+        16
+      ],
+      "directory": "results/certificates/575_112_45_16",
+      "exact_input": "results/certificates/575_112_45_16/exact_certificate.json",
+      "arithmetic_checker": "code/verification/verify_integer_moments_and_margins.py",
+      "presentation_checker": "code/verification/verify_article_metadata.py",
+      "note": "Section 4 uses the accompanying structural sources and exact residual bound.",
+      "supporting_exact_inputs": [
+        "results/certificates/575_112_45_16/affine_counting_equations.json",
+        "results/certificates/575_112_45_16/exact_certificate.json",
+        "results/certificates/575_112_45_16/exact_counting_elimination.json",
+        "results/certificates/575_112_45_16/forbidden_configurations.json",
+        "results/certificates/575_112_45_16/gegenbauer_counting_model.json",
+        "results/certificates/575_112_45_16/integer_common_neighbour_moments.json",
+        "results/certificates/575_112_45_16/positive_semidefinite_completion_constraints.json"
+      ]
+    },
+    {
+      "parameters": [
+        703,
+        182,
+        81,
+        35
+      ],
+      "directory": "results/certificates/703_182_81_35",
+      "printed_certificate_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "printed_table_labels": [
+        "tab:direct-functions",
+        "tab:direct-coeff-b"
+      ],
+      "presentation_checker": "code/verification/verify_displayed_tables.py",
+      "independent_reconstruction": "code/verification/verify_1344_certificate.py",
+      "note": "The actual printed directions and coefficients are parsed from the main TeX. Retained raw JSON may represent another certificate.",
+      "retained_alternative_inputs": [
+        "results/certificates/703_182_81_35/raw_certificate.json",
+        "results/certificates/703_182_81_35/reduced_certificate.json"
+      ]
+    },
+    {
+      "parameters": [
+        1344,
+        221,
+        88,
+        26
+      ],
+      "directory": "results/certificates/1344_221_88_26",
+      "printed_certificate_source": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
+      "printed_table_labels": [
+        "tab:direct-functions",
+        "tab:direct-coeff-a"
+      ],
+      "presentation_checker": "code/verification/verify_displayed_tables.py",
+      "independent_reconstruction": "code/verification/verify_1344_certificate.py",
+      "note": "The actual printed directions and coefficients are parsed from the main TeX. Retained raw JSON may represent another certificate.",
+      "supporting_exact_inputs": [
+        "code/verification/verify_1344_certificate.py"
+      ]
+    }
+  ],
+  "shared_exact_inputs": [
+    "results/catalogue/graph_types.txt",
+    "results/catalogue/five_and_six_point_theory.json",
+    "results/catalogue/canonical_graph_map_1_vertices.bin",
+    "results/catalogue/canonical_graph_map_2_vertices.bin",
+    "results/catalogue/canonical_graph_map_3_vertices.bin",
+    "results/catalogue/canonical_graph_map_4_vertices.bin",
+    "results/catalogue/canonical_graph_map_5_vertices.bin",
+    "results/catalogue/canonical_graph_map_6_vertices.bin",
+    "results/catalogue/canonical_graph_map_7_vertices.bin"
+  ]
+}

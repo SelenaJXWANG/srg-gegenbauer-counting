@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "v": 575,
+  "graphs": 1252,
+  "core_coordinates": 174,
+  "free_coordinates": 111,
+  "triangular_deletion_rows": 1078,
+  "forbidden_witnesses": 58,
+  "completion_rows": 76,
+  "completion_witnesses": 273,
+  "modular_rank_prime": 1000000007,
+  "modular_rank": 63,
+  "exact_rank": 63,
+  "spanning_tree_bound": "36958983856062464/311076891696285",
+  "safe_free_coordinate_bound": 256,
+  "seconds": 1.472494125366211,
+  "meaning": "All source equations valid under the independently proved complete-shortest-shell theorem. The saved affine map parametrizes their entire solution space, not just a subset."
+}

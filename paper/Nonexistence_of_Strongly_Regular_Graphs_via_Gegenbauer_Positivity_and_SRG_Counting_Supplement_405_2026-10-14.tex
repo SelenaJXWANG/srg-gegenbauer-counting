@@ -1,0 +1,475 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,float}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\definecolor{inkblue}{RGB}{25,68,88}
+\usepackage[colorlinks=true,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue]{hyperref}
+\hypersetup{pdftitle={Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting},pdfauthor={Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\DeclareMathOperator{\Adj}{Adj}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\srg}{\operatorname{srg}}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{1.5em}
+\allowdisplaybreaks[2]
+\hypersetup{pdftitle={Supplementary Material: Exact Rational Certificate for (405,132,63,33)}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\begin{document}
+\begin{center}
+{\Large\bfseries Supplementary Material\par}
+\medskip
+{\large Exact Rational Certificate for $(405,132,63,33)$\par}
+\medskip
+Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai\par
+14 October 2026
+\end{center}
+% Generated directly from pure_exact_certificate.json; all values checked over Q.
+% This appendix needs amsmath, amssymb, array, booktabs, longtable.
+\section{Complete rational certificate for 405}
+\label{app:405-explicit}
+This supplement specifies all $174$ sources and their coefficients for
+$(405,132,63,33)$, including every value of all $107$ weight functions.
+It also gives formulas that recover every coefficient of the contradiction
+from this printed data. No numerical optimizer is part of this specification.
+
+
+A graph in the tables is specified by $(h,b)$: it has vertex set
+$\{0,\ldots,h-1\}$ and an edge $ij$, $i<j$, exactly when bit
+$j(j-1)/2+i$ of the nonnegative integer $b$ is one. The symbol $y_F$
+means $2^{\binom h2}N_F/(405)_h$, where $h=|F|$, and is unchanged by relabelling $F$.
+The source index $i$ runs from $1$ to $174$. The printed coefficient
+$w_i$ is already reduced; no further row normalization is applied.
+
+% Insert after the supplement section heading, before the certificate inventory.
+Let $\Gamma$ be a hypothetical strongly regular graph with parameters
+$(405,132,63,33)$. For a labelled graph $F$, let $N_F$ count its
+injective induced embeddings into $\Gamma$. Write
+$(405)_h=\prod_{j=0}^{h-1}(405-j)$, with $(405)_0=1$, and
+$[m]=\{0,\ldots,m-1\}$. For a graph $H$ on $[m]$,
+$\mathcal N_H(b)$ is the neighbourhood of $b$, and $H_C$ adds one
+labelled vertex adjacent precisely to $C\subseteq[m]$.
+A binary profile has coordinate $j$ equal to one precisely when
+its vertex is adjacent to selected vertex $j$.
+The SRG identities give the positive semidefinite matrix
+\[
+ G=\frac{9I+3\operatorname{Adj}(\Gamma)-J}{8},\qquad
+ \operatorname{rank}G=30.
+\]
+Here $J$ is the all-one matrix. Thus $G$ is the Gram matrix of unit vectors $p_x\in\mathbb R^{30}$.
+
+\subsection*{Exact reconstruction formulas}
+For $i\le67$ set $R_i(y)=-y_{F_i}$ using Table~\ref{tab:405-countdata}.
+For $i\ge68$, take $H_i$, $\ell_i$ and $f_i$ from
+Table~\ref{tab:405-kerneldata}. An array in that table is read row by
+row in binary lexicographic profile order, with coordinate $0$ first.
+Thus the first entry is $f_i(0,\ldots,0)$ and the last is
+$f_i(1,\ldots,1)$. All $2^{|H_i|}$ entries are present.
+
+For an $m$-vertex anchor $H$ and profiles $\sigma,\tau\in\{0,1\}^m$, put
+\begin{align*}
+ G_H&=(9I+3\operatorname{Adj}(H)-J)/8,
+ &b_\sigma&=(3\sigma-\mathbf1)/8,\\
+ h_\sigma&=1-b_\sigma^TG_H^{-1}b_\sigma,
+ &z_{\sigma\tau}(e)&=(3e-1)/8-b_\sigma^TG_H^{-1}b_\tau,\\
+ D&=30-m,
+ &(\kappa_0,\kappa_1,\kappa_2)(z,h,h')
+   &=\left(1,z,\frac{Dz^2-hh'}{D-1}\right).
+\end{align*}
+Here $H_\sigma$ adds one labelled vertex with profile $\sigma$,
+and $H_{\sigma,\tau;e}$ adds two labelled vertices with those profiles
+and edge indicator $e$ between them. Every selected $G_H$ is positive
+definite. For row $i\ge68$, take $H=H_i$ and $m=|H_i|$ in these
+definitions; thus $h_\sigma$, $z_{\sigma\tau}(e)$ and $D$ belong to
+that row's reference graph. Define the row explicitly by
+\begin{align}
+ R_i(y)={}&-\sum_\sigma f_i(\sigma)^2h_\sigma^{\ell_i}y_{(H_i)_\sigma}
+ \notag\\
+ &-\frac{404-m}{2^{m+1}}
+ \sum_{\sigma,\tau}\sum_{e=0}^1
+ f_i(\sigma)f_i(\tau)
+ \kappa_{\ell_i}\bigl(z_{\sigma\tau}(e),h_\sigma,h_\tau\bigr)
+ y_{(H_i)_{\sigma,\tau;e}}.
+ \label{eq:405-printed-rows}
+\end{align}
+The convention $h^0=1$ is used. Isomorphic extensions are combined
+with their full multiplicities. Formula~\eqref{eq:405-printed-rows}
+is the negative normalized kernel energy, so $R_i(y)\le0$.
+% Insert after eq:405-printed-rows, replacing its existing one-sentence
+% assertion that the negative normalized energy is nonpositive if desired.
+For a fixed anchor, let $q_x\in\mathbb R^D$, $D=30-m$, be the
+orthogonal residuals of $p_x$ for vertices outside the anchor.
+With arbitrary real weights $a_x$,
+the sums of $a_xa_y\kappa_0$ and $a_xa_y\kappa_1$ are
+$(\sum_xa_x)^2$ and $\|\sum_xa_xq_x\|^2$, respectively, while
+\[
+ \sum_{x,y}a_xa_y\kappa_2(q_x^Tq_y,\|q_x\|^2,\|q_y\|^2)
+ =\frac{D}{D-1}\left\|\sum_xa_x
+ \left(q_xq_x^T-\frac{\|q_x\|^2}{D}I_D\right)\right\|_F^2\ge0.
+\]
+Here $\|\cdot\|_F$ is the Frobenius norm.
+Take $a_x=f_i(\sigma(x))$ and sum over all labelled embeddings of
+the anchor. Multiplication by the positive factor
+$2^{\binom{m+1}{2}}/(405)_{m+1}$ gives the negative of
+\eqref{eq:405-printed-rows}. Hence $R_i(y)\le0$.
+
+
+Here is a finite recursion specifying all ordinary counting substitutions.
+Let $\mathcal C$ contain one graph of each isomorphism type on at most
+seven vertices with minimum degree at least three. It has $173$ elements.
+Introduce $x_C=y_C$ for $C\in\mathcal C$. Graph arguments are understood
+up to isomorphism: set $\mathcal T(K_1)=1$ and
+$\mathcal T(F)=x_C$ whenever $F\cong C\in\mathcal C$.
+Fix a labelled representative for each type; for definiteness one may
+choose the representative with the least integer edge mask.
+For any other type $F$ on at least two vertices, choose a vertex of
+minimum degree, delete it to obtain an $m$-vertex graph $H$, and let
+$B\subseteq[m]$ be its neighbour set. Then $|B|\le2$, and set
+\begin{equation}
+ \mathcal T(F)=\frac{2^m e(H,B)}{405-m}\mathcal T(H)
+ -\sum_{B\subsetneq B'\subseteq[m]}\mathcal T(H_{B'}),
+ \label{eq:405-printed-recursion}
+\end{equation}
+where
+\[
+ e(H,B)=
+ \begin{cases}
+ 405-m,&B=\varnothing,\\
+ 132-\deg_H(b),&B=\{b\},\\
+ 63-|\mathcal N_H(b)\cap\mathcal N_H(c)|,
+       &B=\{b,c\},\ b\sim_Hc,\\
+ 33-|\mathcal N_H(b)\cap\mathcal N_H(c)|,
+       &B=\{b,c\},\ b\not\sim_Hc.
+ \end{cases}
+\]
+Choose the least labelled vertex to break ties, and retain the increasing
+order of the surviving labels after deletion. The recursion terminates
+because each term has fewer
+vertices, or the same number of vertices and more edges. It specifies
+$\mathcal T(F)$ using only the ordinary one-vertex counting equations.
+The saved independent reconstruction checks all these equations and the
+identity rows for the free types. Induction through the recursion then
+shows that any choice of representatives gives the same affine expression
+in the isomorphism-type variables $x_C$.
+
+Substitute $y_F=\mathcal T(F)$ in every printed source and collect terms:
+\begin{equation}
+ \sum_{i=1}^{174}w_iR_i\bigl(\mathcal T\bigr)
+   =c_0+\sum_{C\in\mathcal C}c_Cx_C.
+ \label{eq:405-printed-coefficients}
+\end{equation}
+This equality defines the rational coefficients completely from the tables
+and formulas above. Put $U_C=2^{\binom{|C|}{2}}$ and
+$E=-\sum_{c_C<0}c_CU_C$. Exact substitution gives
+\begin{equation}
+ c_0>\frac{570}{10^{10}},\qquad
+ 0\le E<\frac{11}{10^{10}}.
+ \label{eq:405-printed-rationalbounds}
+\end{equation}
+These are strict rational comparisons, not rounded decimal estimates.
+The original nonnegative counts and empty-set extension equations imply
+$0\le x_C\le U_C$. Thus the fully specified certificate is
+\begin{align}
+ 0\;&\ge\sum_{i=1}^{174}w_iR_i\bigl(\mathcal T\bigr)
+      +\sum_{c_C\ge0}c_C(-x_C)
+      +\sum_{c_C<0}(-c_C)(x_C-U_C)\notag\\
+   &=c_0-E>\frac{559}{10^{10}}>0.
+ \label{eq:405-printed-contradiction}
+\end{align}
+All $174$ printed $w_i$ are strictly positive. The direction arrays and
+rational coefficients below were generated from the exact inputs and
+checked against them entry by entry. In particular, the three
+second-degree rows are $i=75,76,85$, all with $(m,b)=(5,222)$,
+namely $K_{2,3}$ with bipartition $\{0,1\}\cup\{2,3,4\}$.
+
+\clearpage
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{rcr@{\qquad}rcr}
+\caption{All $67$ count sources: $R_i=-y_{F_i}$. The two halves continue the same list.}\label{tab:405-countdata}\\
+\toprule
+$i$&$(|F_i|,b_i)$&$w_i$&$i$&$(|F_i|,b_i)$&$w_i$\\\midrule
+\endfirsthead
+\toprule
+$i$&$(|F_i|,b_i)$&$w_i$&$i$&$(|F_i|,b_i)$&$w_i$\\\midrule
+\endhead
+\bottomrule\endfoot
+1 & $(6,16320)$ & $\frac{4432931675086999}{28800000000000000000}$ & 35 & $(7,2096133)$ & $\frac{6747144395871761}{151040000000000000000}$\\[2pt]
+2 & $(6,32704)$ & $\frac{293735452161148677}{1561600000000000000000}$ & 36 & $(7,236989)$ & $\frac{286267699178147477}{8000000000000000000000}$\\[2pt]
+3 & $(6,16322)$ & $\frac{877203395721931}{1600000000000000000}$ & 37 & $(7,879100)$ & $\frac{137770506922513731}{1856000000000000000000}$\\[2pt]
+4 & $(6,20286)$ & $\frac{3451229927499611}{100000000000000000000}$ & 38 & $(7,1986296)$ & $\frac{332436897606541119}{7936000000000000000000}$\\[2pt]
+5 & $(6,20383)$ & $\frac{15830843590921873}{100000000000000000000}$ & 39 & $(7,1589219)$ & $\frac{1435021605037413981}{92800000000000000000000}$\\[2pt]
+6 & $(7,31744)$ & $\frac{12531988346210448997}{34967674880000000000000000}$ & 40 & $(7,1826416)$ & $\frac{2123098113746581}{200000000000000000000}$\\[2pt]
+7 & $(7,135533)$ & $\frac{114166116786873949}{16517038080000000000000}$ & 41 & $(7,1048069)$ & $\frac{1668022362929567}{50000000000000000000}$\\[2pt]
+8 & $(7,16322)$ & $\frac{842876737944493259}{196864000000000000000000}$ & 42 & $(7,1812083)$ & $\frac{1246650902619059}{40000000000000000000}$\\[2pt]
+9 & $(7,1070757)$ & $\frac{748844430532683919}{32268800000000000000000}$ & 43 & $(7,1031904)$ & $\frac{5326029766874909}{250000000000000000000}$\\[2pt]
+10 & $(7,54949)$ & $\frac{14499381457879619}{1171200000000000000000}$ & 44 & $(7,2010852)$ & $\frac{83787048882073}{2000000000000000000}$\\[2pt]
+11 & $(7,804336)$ & $\frac{6972705278438623423}{581877760000000000000000}$ & 45 & $(7,522068)$ & $\frac{5215829357476963}{1000000000000000000000}$\\[2pt]
+12 & $(7,1333347)$ & $\frac{4102975363865369084583}{153610485760000000000000000}$ & 46 & $(7,980401)$ & $\frac{18404445824673}{1000000000000000000}$\\[2pt]
+13 & $(7,706085)$ & $\frac{171779308337167990101}{55700070400000000000000000}$ & 47 & $(7,1779319)$ & $\frac{94173189168359}{2000000000000000000}$\\[2pt]
+14 & $(7,54957)$ & $\frac{204178978336526613}{6400000000000000000000}$ & 48 & $(7,577503)$ & $\frac{417198797138760903}{7552000000000000000000}$\\[2pt]
+15 & $(7,1510431)$ & $\frac{795305301537721541}{90240000000000000000000}$ & 49 & $(7,1048480)$ & $\frac{9350344806023369883}{1856000000000000000000000}$\\[2pt]
+16 & $(7,1048064)$ & $\frac{728634566696438857}{55680000000000000000000}$ & 50 & $(7,122622)$ & $\frac{84235295353712979}{2900000000000000000000}$\\[2pt]
+17 & $(7,220067)$ & $\frac{5496089953577656587}{2316800000000000000000000}$ & 51 & $(7,2074227)$ & $\frac{206632462572133}{6250000000000000000}$\\[2pt]
+18 & $(7,203768)$ & $\frac{332857829316942321}{24320000000000000000000}$ & 52 & $(7,2079688)$ & $\frac{698823698237899}{200000000000000000000}$\\[2pt]
+19 & $(7,326195)$ & $\frac{941500591424178322173}{48022323200000000000000000}$ & 53 & $(7,1899000)$ & $\frac{1297200313453847}{25000000000000000000}$\\[2pt]
+20 & $(7,1014793)$ & $\frac{1095021535917172073}{31744000000000000000000}$ & 54 & $(7,912747)$ & $\frac{10510941117098171}{2500000000000000000000}$\\[2pt]
+21 & $(7,1368429)$ & $\frac{7397761749711252717}{492032000000000000000000}$ & 55 & $(7,1556448)$ & $\frac{4736859274093761}{200000000000000000000}$\\[2pt]
+22 & $(7,1013836)$ & $\frac{13338199636841933}{31744000000000000000000}$ & 56 & $(7,1031664)$ & $\frac{685234461081651}{125000000000000000000}$\\[2pt]
+23 & $(7,2089528)$ & $\frac{351829117151688323}{36249600000000000000000}$ & 57 & $(7,2039288)$ & $\frac{3506682217891323}{100000000000000000000}$\\[2pt]
+24 & $(7,101885)$ & $\frac{481514543191296839}{15360000000000000000000}$ & 58 & $(7,515576)$ & $\frac{706873785866791}{50000000000000000000}$\\[2pt]
+25 & $(7,103933)$ & $\frac{192029838539678101}{16000000000000000000000}$ & 59 & $(7,1867768)$ & $\frac{5432504025953709}{250000000000000000000}$\\[2pt]
+26 & $(7,811517)$ & $\frac{425365848244645581}{7424000000000000000000}$ & 60 & $(7,2080712)$ & $\frac{1260473193245211}{250000000000000000000}$\\[2pt]
+27 & $(7,1778239)$ & $\frac{199825109401013753209}{15491072000000000000000000}$ & 61 & $(7,1048048)$ & $\frac{3565258606328343}{100000000000000000000}$\\[2pt]
+28 & $(7,980400)$ & $\frac{1859742612814188781}{256000000000000000000000}$ & 62 & $(7,2063243)$ & $\frac{12162738640294731}{1000000000000000000000}$\\[2pt]
+29 & $(7,813933)$ & $\frac{1296615683685705453}{64000000000000000000000}$ & 63 & $(7,516088)$ & $\frac{18512765334187303}{1000000000000000000000}$\\[2pt]
+30 & $(7,1032064)$ & $\frac{95273191495385071}{1600000000000000000000}$ & 64 & $(7,1974265)$ & $\frac{35433620623466983}{10000000000000000000000}$\\[2pt]
+31 & $(7,834040)$ & $\frac{873631212813303}{20000000000000000000}$ & 65 & $(7,1556427)$ & $\frac{3736667720297609}{200000000000000000000}$\\[2pt]
+32 & $(7,1693356)$ & $\frac{27934881413654937}{1000000000000000000000}$ & 66 & $(7,1048056)$ & $\frac{127274694846441}{10000000000000000000}$\\[2pt]
+33 & $(7,946413)$ & $\frac{255814985078879}{25000000000000000000}$ & 67 & $(7,2096632)$ & $\frac{3837598246939311}{200000000000000000000}$\\[2pt]
+34 & $(7,1779315)$ & $\frac{2486850137261857}{125000000000000000000}$ &  &  & \\[2pt]
+\end{longtable}
+\endgroup
+
+\clearpage
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\setlength{\arraycolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{longtable}{rcl}
+\caption{All $107$ kernel sources. The source column gives $(m,b;\ell)$ and the final column gives $w_i$, followed by $f_i$ row by row.}\label{tab:405-kerneldata}\\
+\toprule
+$i$&$(m,b;\ell)$&$w_i$ and $f_i$\\\midrule
+\endfirsthead
+\toprule
+$i$&$(m,b;\ell)$&$w_i$ and $f_i$\\\midrule
+\endhead
+\bottomrule\endfoot
+68 & $(4,45;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{35565071516699134399}{1318905881618234860000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -62492 & 152648 & -182005 & 62492 & 0 & -434322 & 463679\\-152648 & 434322 & 0 & -189824 & 182005 & -463679 & 189824 & 0\end{array}$}\end{tabular}\\[8pt]
+69 & $(5,621;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8182262002905589}{7117363909909680000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & -102163 & 161206 & -36784 & 108851 & 266344 & -397454\\36784 & -108851 & -2535 & 15557 & 0 & 0 & -161647 & 220691\\102163 & -161206 & 0 & 0 & 2535 & -15557 & -232095 & 304161\\-266344 & 397454 & 232095 & -304161 & 161647 & -220691 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+70 & $(5,222;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{6159739329383990367}{7328885380069263538400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 347575 & -303289 & -123 & -44286 & -844 & 968 & 0\\0 & -73921 & 64502 & -42033 & 9419 & -287861 & 329895 & 0\\0 & -73921 & 64502 & -42033 & 9419 & -287861 & 329895 & 0\\0 & -653 & 570 & 58824 & 83 & 402851 & -461675 & 0\end{array}$}\end{tabular}\\[8pt]
+71 & $(5,478;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2323334349629557}{16414562146500000000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -419980 & 0 & 228562 & 419980 & 0 & -228562 & 0\\0 & 314220 & 0 & -122802 & -314220 & 0 & 122802 & 0\\0 & 314220 & 0 & -122802 & -314220 & 0 & 122802 & 0\\0 & -208460 & 0 & 17042 & 208460 & 0 & -17042 & 0\end{array}$}\end{tabular}\\[8pt]
+72 & $(5,1021;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3865479434076091}{12283033356272437500000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & -64660 & 175455 & 175455 & -286251\\0 & 0 & 0 & 0 & 175455 & -286251 & -286251 & 397047\\64660 & -175455 & -175455 & 286251 & 0 & 0 & 0 & 0\\-175455 & 286251 & 286251 & -397047 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+73 & $(5,1023;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{491278683697297}{2762886098238000000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-190146 & 61106 & 61106 & 76994 & 61106 & 76994 & 76994 & -87626\\61106 & 76994 & 76994 & -87626 & 76994 & -87626 & -87626 & -165735\\61106 & 76994 & 76994 & -87626 & 76994 & -87626 & -87626 & -165735\\76994 & -87626 & -87626 & -165735 & -87626 & -165735 & -165735 & 819616\end{array}$}\end{tabular}\\[8pt]
+74 & $(5,960;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{89599552921041407}{130156161570776911640000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & -40858 & -174319 & 7002 & 29873 & 16920 & 161383\\-48166 & -205497 & 44491 & 424349 & 20572 & 196215 & 38 & -432004\\82023 & 349943 & -20572 & -196215 & -44491 & -424349 & -23 & 253685\\-16920 & -161383 & 3 & -36878 & -19 & 215197 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+75 & $(5,222;2)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{916955097401716893}{50549692936109292447500000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 619508 & -369656 & 13124 & -249851 & 19417 & -32540 & 0\\0 & -330870 & 197428 & 49736 & 133442 & 73585 & -123321 & 0\\0 & -330870 & 197428 & 49736 & 133442 & 73585 & -123321 & 0\\0 & -25549 & 15245 & 61946 & 10304 & 91649 & -153595 & 0\end{array}$}\end{tabular}\\[8pt]
+76 & $(5,222;2)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{386746425034437}{53675406395459206542968750000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}117610 & -293584 & -293584 & -14274 & -293584 & -14274 & -14274 & 0\\-34929 & -18491 & -18491 & 265514 & -18491 & 265514 & 265514 & 52070\\-34929 & -18491 & -18491 & 265514 & -18491 & 265514 & 265514 & 52070\\0 & -13820 & -13820 & -290273 & -13820 & -290273 & -290273 & 201821\end{array}$}\end{tabular}\\[8pt]
+77 & $(5,478;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{7393629964078759}{110282708584125000000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -5318 & 0 & -231999 & 5318 & 0 & 231999 & 0\\0 & -90660 & 0 & 327977 & 90660 & 0 & -327977 & 0\\0 & -90660 & 0 & 327977 & 90660 & 0 & -327977 & 0\\0 & 186639 & 0 & -423955 & -186639 & 0 & 423955 & 0\end{array}$}\end{tabular}\\[8pt]
+78 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{716954813220737}{12297880462118565000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}64187 & 433525 & 59071 & -208362 & 59071 & -208362 & -199932 & 67356\\59071 & -208362 & -30469 & -62510 & -199932 & 67356 & 124176 & 184115\\59071 & -208362 & -199932 & 67356 & -30469 & -62510 & 124176 & 184115\\-199932 & 67356 & 124176 & 184115 & 124176 & 184115 & 63490 & -480943\end{array}$}\end{tabular}\\[8pt]
+79 & $(5,1021;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2083331004868951}{103204847977077196800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-399921 & 388647 & 388647 & -86977 & 369889 & -41016 & -41016 & 19719\\388647 & -86977 & -86977 & -916 & -41016 & 19719 & 19719 & -15807\\369889 & -41016 & -41016 & 19719 & 4194 & -52694 & -52694 & -7058\\-41016 & 19719 & 19719 & -15807 & -52694 & -7058 & -7058 & 262999\end{array}$}\end{tabular}\\[8pt]
+80 & $(5,1023;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{207266842177493}{1492894019299666718750000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 31426 & 61125 & -229740 & 6231 & -93477 & -167198 & 231681\\-143942 & 279300 & 205579 & -120533 & 341842 & -249279 & -179624 & 26609\\45160 & -190111 & -263833 & 322985 & -127570 & 194239 & 263894 & -84813\\245207 & -157975 & -88320 & 3671 & -217067 & 36016 & 18517 & 0\end{array}$}\end{tabular}\\[8pt]
+81 & $(5,992;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2397606624605478069}{1076151862254430798976000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\140279 & 289318 & -83842 & -307654 & -83842 & -307654 & -79047 & 432443\\-140279 & -289318 & 83842 & 307654 & 83842 & 307654 & 79047 & -432443\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+82 & $(5,729;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{21910999623230153}{39733433441334633400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}52995 & -126974 & -126974 & 233401 & 193930 & -204270 & -204270 & 98115\\-126974 & 233401 & 233401 & -166734 & -204270 & 98115 & 98115 & -81008\\-126974 & 233401 & 233401 & -166734 & -204270 & 98115 & 98115 & -81008\\233401 & -166734 & -166734 & -278573 & 98115 & -81008 & -81008 & 358494\end{array}$}\end{tabular}\\[8pt]
+83 & $(5,437;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2791812622047061657}{31607950223891414796800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-117793 & 101558 & 101558 & 99305 & -97248 & 15131 & 15131 & -248244\\-80543 & 80178 & 80178 & -374556 & -118473 & 107714 & 107714 & 156174\\160685 & -238564 & -238564 & 1214 & -180995 & 226624 & 226624 & -558\\33009 & -68491 & -68491 & 355822 & 291882 & -287530 & -287530 & -9004\end{array}$}\end{tabular}\\[8pt]
+84 & $(5,222;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{4877206172843601}{4685022726872320000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 121110 & -369946 & 119 & 248836 & -178 & 58 & 0\\0 & 89238 & -272589 & 139162 & 183351 & -206893 & 67731 & 0\\0 & 89238 & -272589 & 139162 & 183351 & -206893 & 67731 & 0\\0 & 5971 & -18240 & 349364 & 12269 & -519400 & 170037 & 0\end{array}$}\end{tabular}\\[8pt]
+85 & $(5,222;2)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{935932178379011067}{20528165536230077984600000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -490381 & 506130 & 585 & -15749 & -18788 & 18203 & 0\\0 & 151976 & -156857 & -10059 & 4881 & 323273 & -313214 & 0\\0 & 151976 & -156857 & -10059 & 4881 & 323273 & -313214 & 0\\0 & 13296 & -13723 & -771 & 427 & 24784 & -24013 & 0\end{array}$}\end{tabular}\\[8pt]
+86 & $(5,1017;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{6051359310862721}{5701364601295101360000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -328898 & 328898 & 0 & 0 & 9247 & -9247 & 0\\0 & 382723 & -382723 & 0 & 0 & -157371 & 157371 & 0\\0 & 382723 & -382723 & 0 & 0 & -157371 & 157371 & 0\\0 & -208124 & 208124 & 0 & 0 & 77072 & -77072 & 0\end{array}$}\end{tabular}\\[8pt]
+87 & $(5,1005;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1091886607993667}{79953173520691200000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-95956 & 50765 & 238421 & -153404 & 238421 & -153404 & -263515 & 273705\\238421 & -153404 & -20190 & 9199 & -263515 & 273705 & 62945 & -102812\\238421 & -153404 & -263515 & 273705 & -20190 & 9199 & 62945 & -102812\\-263515 & 273705 & 62945 & -102812 & 62945 & -102812 & 164973 & -54391\end{array}$}\end{tabular}\\[8pt]
+88 & $(5,1005;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1654874217157843}{6234361224973875000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 353553 & -353553\\0 & 0 & 0 & 0 & -353553 & 353553 & 0 & 0\\0 & 0 & -353553 & 353553 & 0 & 0 & 0 & 0\\353553 & -353553 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+89 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{887493888104349}{3788148743919044000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}276193 & -175335 & -200474 & 220557 & -200474 & 220557 & -77445 & -132673\\-200474 & 220557 & 10665 & 18916 & -77445 & -132673 & 150399 & 79151\\-200474 & 220557 & -77445 & -132673 & 10665 & 18916 & 150399 & 79151\\-77445 & -132673 & 150399 & 79151 & 150399 & 79151 & 212558 & -530634\end{array}$}\end{tabular}\\[8pt]
+90 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{5120966254311011}{7285839369142031250000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & -283979 & 411529\\0 & 0 & 0 & 0 & 283979 & -411529 & 0 & 0\\0 & 0 & 283979 & -411529 & 0 & 0 & 0 & 0\\-283979 & 411529 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+91 & $(5,1021;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1846732871507397}{5908231139719040000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}110 & -87821 & -87821 & 251457 & 134492 & -45120 & -45120 & -65154\\-87821 & 251457 & 251457 & -444627 & -45120 & -65154 & -65154 & 223033\\134492 & -45120 & -45120 & -65154 & 136105 & -172115 & -172115 & 247369\\-45120 & -65154 & -65154 & 223033 & -172115 & 247369 & 247369 & -353775\end{array}$}\end{tabular}\\[8pt]
+92 & $(5,1023;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{18518492245803023}{52346964604387218750000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}38454 & 229458 & 229458 & -110605 & 229458 & -110605 & -110605 & -144064\\229458 & -110605 & -110605 & -144064 & -110605 & -144064 & -144064 & 283596\\229458 & -110605 & -110605 & -144064 & -110605 & -144064 & -144064 & 283596\\-110605 & -144064 & -144064 & 283596 & -144064 & 283596 & 283596 & -57042\end{array}$}\end{tabular}\\[8pt]
+93 & $(4,52;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3532848272568855501}{940832706473123648000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}17908 & -45541 & -45541 & 173550 & -45541 & 173550 & 173550 & -244952\\-125267 & 271367 & 271367 & -359693 & 271367 & -359693 & -359693 & 467277\end{array}$}\end{tabular}\\[8pt]
+94 & $(4,45;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8926077345717279209}{839370681756602992000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-175075 & 151903 & 151903 & 44339 & 151903 & -75637 & 44339 & -293674\\151903 & 44339 & -75637 & -293674 & 44339 & -293674 & -293674 & 716078\end{array}$}\end{tabular}\\[8pt]
+95 & $(4,47;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3771971858146137}{147893835802681552000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}32547 & 5720 & 256576 & -90314 & 5720 & -334335 & -90314 & 214400\\256576 & -90314 & -654571 & 283780 & -90314 & 214400 & 283780 & -203337\end{array}$}\end{tabular}\\[8pt]
+96 & $(5,5;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{9517576461589525093}{1203583304045052047360000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 22061 & -237066 & -237066 & 452070\\0 & 0 & 0 & 0 & 64761 & 150243 & 150243 & -365248\\-22061 & 237066 & 237066 & -452070 & 0 & 0 & 0 & 0\\-64761 & -150243 & -150243 & 365248 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+97 & $(5,517;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{10438665066265197}{24540654135258729920000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 21098 & -158515 & -158515 & 295933\\0 & 0 & 0 & 0 & -147169 & 284586 & 284586 & -422004\\-21098 & 158515 & 158515 & -295933 & 0 & 0 & 0 & 0\\147169 & -284586 & -284586 & 422004 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+98 & $(5,960;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{107394004274549959}{30010951631819714950000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & -4366 & 30550 & -35732 & 250006 & -139430 & -253713\\-552 & 3863 & -17103 & -31121 & -126167 & -229579 & 529 & 552815\\40650 & -284420 & 126167 & 229579 & 17103 & 31121 & -7 & -7509\\139430 & 253713 & -465 & -485927 & -57 & -59379 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+99 & $(5,101;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{155574975945404459}{183032849054322824345600000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 142602 & -142602 & 0 & 45094 & -199320 & 260948 & -106723\\0 & -151729 & 151729 & 0 & -55436 & 218788 & -259734 & 96381\\-45094 & -260948 & 199320 & 106723 & 0 & 317666 & -317666 & 0\\55436 & 259734 & -218788 & -96381 & 0 & -326793 & 326793 & 0\end{array}$}\end{tabular}\\[8pt]
+100 & $(5,519;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{441877492854601393}{8960031270109635801600000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-31443 & -27260 & -27260 & 245501 & -55433 & 29586 & 29586 & -328447\\-55433 & 29586 & 29586 & -328447 & -108997 & 78755 & 78755 & 220594\\-55433 & 29586 & 29586 & -328447 & -108997 & 78755 & 78755 & 220594\\-108997 & 78755 & 78755 & 220594 & 360381 & -353364 & -353364 & 26544\end{array}$}\end{tabular}\\[8pt]
+101 & $(5,992;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1983081816301178287}{4846128124605174192256000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-57919 & 313867 & 170247 & -345639 & 170247 & -345639 & -192064 & 261387\\-11955 & -178429 & -136151 & 220316 & -136151 & 220316 & 163133 & -155936\\-11955 & -178429 & -136151 & 220316 & -136151 & 220316 & 163133 & -155936\\193873 & -99369 & -40603 & 37461 & -40603 & 37461 & -1747 & -91275\end{array}$}\end{tabular}\\[8pt]
+102 & $(5,992;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1740690333499091}{2673862676511552000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & -52475 & -196996 & 52475 & 196996 & 0 & 0\\0 & 0 & -72942 & 322413 & 72942 & -322413 & 0 & 0\\0 & 0 & -72942 & 322413 & 72942 & -322413 & 0 & 0\\0 & 0 & 198359 & -447830 & -198359 & 447830 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+103 & $(5,992;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8940520736711881}{4327709614284727991000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-59517 & -88101 & -100287 & 356895 & -100287 & 356895 & 81770 & -448950\\14723 & -247818 & -56656 & 73412 & -56656 & 73412 & -6200 & 207364\\14723 & -247818 & -56656 & 73412 & -56656 & 73412 & -6200 & 207364\\361455 & 159928 & 13311 & -211006 & 13311 & -211006 & -181 & -127394\end{array}$}\end{tabular}\\[8pt]
+104 & $(5,103;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2477826471212474797}{2513658021948590739200000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-3080 & -128153 & -128153 & 473296 & -1881 & -45553 & 63975 & -207466\\95835 & 21791 & 21791 & -330230 & -101728 & 182243 & 76225 & 41770\\-1881 & 63975 & -45553 & -207466 & -39545 & 175480 & 175480 & -112904\\-101728 & 76225 & 182243 & 41770 & 173368 & -334912 & -334912 & 304964\end{array}$}\end{tabular}\\[8pt]
+105 & $(5,433;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3524220686707390819}{733124843499441639512000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}62964 & -93023 & -93023 & 3504 & 163544 & 82507 & 82507 & -505954\\-295911 & 36470 & 36470 & 77465 & 378 & 124034 & 124034 & 194035\\-198643 & 236437 & 236437 & 522 & -259028 & 144047 & 144047 & -6844\\319689 & -221400 & -221400 & 113442 & 41553 & -143616 & -143616 & -41625\end{array}$}\end{tabular}\\[8pt]
+106 & $(5,433;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{7504571763760729033}{3651000141710658034964000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}1226 & -11376 & -11376 & -43256 & -178546 & 99820 & 99820 & -210643\\368046 & -234573 & -234573 & 467838 & 3841 & -36509 & -36509 & -43231\\-24157 & 115482 & 115482 & 426 & -156928 & 94479 & 94479 & 15067\\-194633 & -92280 & -92280 & -129999 & -65893 & 312000 & 312000 & -303247\end{array}$}\end{tabular}\\[8pt]
+107 & $(5,613;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8592577785919841}{21856521898888953600000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 19920 & 44302 & -234153 & 7460 & -34066 & -188722 & 385259\\-39691 & 24599 & -5736 & 190759 & 117516 & -95738 & 64872 & -256581\\-31990 & 44008 & -15318 & 173231 & 30521 & -35852 & 153748 & -318347\\261351 & -278196 & -212917 & 59832 & -345166 & 355325 & 159771 & 0\end{array}$}\end{tabular}\\[8pt]
+108 & $(5,437;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1268231699898718381}{1693509970155417627392000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}24208 & 61785 & 61785 & 92572 & -228891 & -68416 & -68416 & 188323\\-233721 & 203876 & 203876 & -361305 & 365353 & -71427 & -71427 & -15169\\-1849 & 50513 & 50513 & -276575 & 109634 & 115967 & 115967 & -143186\\153802 & -195970 & -195970 & 446088 & -135768 & -65779 & -65779 & 78818\end{array}$}\end{tabular}\\[8pt]
+109 & $(5,945;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{60127745932404464559}{128568831263000003414080000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}16780 & -131392 & -131392 & 179364 & 137525 & -56269 & -56269 & -322219\\-146402 & 260535 & 260535 & 62895 & 6687 & -37122 & -37122 & -6131\\-57381 & 48312 & 48312 & 83450 & -275158 & 217412 & 217412 & 81517\\309433 & -173679 & -173679 & -455688 & -96056 & -23222 & -23222 & 272238\end{array}$}\end{tabular}\\[8pt]
+110 & $(5,993;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8918917090767866327}{18100344064088401856000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}116821 & -70907 & -132646 & 215205 & -132646 & 215205 & 46004 & -61693\\-132646 & 215205 & 168951 & -213651 & 168951 & -213651 & 94488 & -21888\\-132646 & 215205 & 168951 & -213651 & 168951 & -213651 & 94488 & -21888\\46004 & -61693 & 94488 & -21888 & 94488 & -21888 & -468965 & 399409\end{array}$}\end{tabular}\\[8pt]
+111 & $(5,993;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1971639743210093}{1051311333794595120000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 77668 & -292495 & 77668 & -292495 & 161223 & 318355\\-77668 & 292495 & 0 & 0 & 0 & 0 & 40390 & -305141\\-77668 & 292495 & 0 & 0 & 0 & 0 & 40390 & -305141\\-161223 & -318355 & -40390 & 305141 & -40390 & 305141 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+112 & $(5,621;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{293886947787454393}{108542691091493073210000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}39978 & -157957 & 15395 & -52865 & -108767 & 279770 & 114505 & -293373\\-108767 & 279770 & -88976 & -29685 & -405779 & 182958 & 227149 & 106642\\15395 & -52865 & -41200 & 335100 & -88976 & -29685 & 35719 & -10175\\114505 & -293373 & 35719 & -10175 & 227149 & 106642 & 16951 & -360731\end{array}$}\end{tabular}\\[8pt]
+113 & $(5,222;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{28258627022212189}{15207733184360847158000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}129598 & 302064 & 302064 & -1164 & 302064 & -1164 & -1164 & 0\\28737 & -191406 & -191406 & -159040 & -191406 & -159040 & -159040 & -9697\\28737 & -191406 & -191406 & -159040 & -191406 & -159040 & -159040 & -9697\\0 & -17877 & -17877 & 329422 & -17877 & 329422 & 329422 & 97662\end{array}$}\end{tabular}\\[8pt]
+114 & $(5,1012;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{15529849714389967}{20158207303631200000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 19043 & -9869 & -86875 & 45021 & 193935 & -161256\\67832 & -35152 & -248381 & 206527 & 54446 & -45272 & 0 & 0\\0 & 0 & -61342 & 52167 & 279840 & -237986 & -344601 & 311922\\-218498 & 185818 & 441346 & -399492 & -96745 & 87570 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+115 & $(5,1016;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1334751114552388891}{11285211164350150200000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-28548 & -194453 & -194453 & 45361 & -60973 & 238702 & 238702 & 27031\\-60973 & 238702 & 238702 & 27031 & 99987 & -147302 & -147302 & -207526\\-60973 & 238702 & 238702 & 27031 & 99987 & -147302 & -147302 & -207526\\99987 & -147302 & -147302 & -207526 & -3352 & -51366 & -51366 & 521167\end{array}$}\end{tabular}\\[8pt]
+116 & $(5,1016;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{205465028551129}{893542963568225000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & -8049 & -37157 & -37157 & 82363\\2359 & 10889 & 10889 & -24136 & -245685 & 277643 & 277643 & -309602\\5690 & 26268 & 26268 & -58227 & -101842 & 115089 & 115089 & -128337\\347527 & -392733 & -392733 & 437939 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+117 & $(5,1016;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2374238923720170331}{5377960579829607024000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-39498 & 20340 & 20340 & -57339 & 224897 & -55205 & -55205 & 140726\\224897 & -55205 & -55205 & 140726 & -161048 & -643 & -643 & -291937\\224897 & -55205 & -55205 & 140726 & -161048 & -643 & -643 & -291937\\-161048 & -643 & -643 & -291937 & -6246 & 1400 & 1400 & 656776\end{array}$}\end{tabular}\\[8pt]
+118 & $(5,757;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{7778090159809309}{114395153011305824000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}9397 & 50992 & 50992 & -80910 & -159706 & 40031 & 161617 & 62661\\231234 & -128820 & -128820 & 109821 & -115466 & 186224 & 85164 & -195636\\-159706 & 161617 & 40031 & 62661 & 541342 & -348893 & -348893 & 96866\\-115466 & 85164 & 186224 & -195636 & -96554 & -1954 & -1954 & 181227\end{array}$}\end{tabular}\\[8pt]
+119 & $(5,478;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{14506664330807267}{18089855369164800000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\-2844 & 190362 & 43998 & -231516 & 190362 & -377880 & -231516 & 419033\\2844 & -190362 & -43998 & 231516 & -190362 & 377880 & 231516 & -419033\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+120 & $(5,478;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{11607564714560783}{8972274846207200000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\188578 & -70012 & -226592 & 354248 & -70012 & -341439 & 354248 & -189017\\-188578 & 70012 & 226592 & -354248 & 70012 & 341439 & -354248 & 189017\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+121 & $(5,1017;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3057017586128491}{3569484717170392800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\-13973 & 150748 & 150748 & -281533 & 434532 & -289196 & -289196 & 137870\\13973 & -150748 & -150748 & 281533 & -434532 & 289196 & 289196 & -137870\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+122 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{12321983632492903}{6399223084829465625000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 210787 & -176831 & 118565 & -99465 & -246005 & -191108\\-210787 & 176831 & 0 & 0 & 68884 & 53512 & 30812 & 264803\\-118565 & 99465 & -68884 & -53512 & 0 & 0 & 54779 & 470774\\246005 & 191108 & -30812 & -264803 & -54779 & -470774 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+123 & $(5,1021;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{51851331871681}{958794388997250000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-215410 & 101608 & 101608 & 162862 & 293446 & 15811 & 15811 & -117417\\101608 & 162862 & 162862 & -275889 & 15811 & -117417 & -117417 & 185262\\293446 & 15811 & 15811 & -117417 & 79448 & -225841 & -225841 & 284023\\15811 & -117417 & -117417 & 185262 & -225841 & 284023 & 284023 & -201300\end{array}$}\end{tabular}\\[8pt]
+124 & $(5,1021;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{176763181912949}{145370429806927500000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}112526 & 222404 & 222404 & -230419 & -22254 & -87036 & -87036 & 41490\\222404 & -230419 & -230419 & -345719 & -87036 & 41490 & 41490 & 416129\\-22254 & -87036 & -87036 & 41490 & 53130 & -78832 & -78832 & 87291\\-87036 & 41490 & 41490 & 416129 & -78832 & 87291 & 87291 & -335743\end{array}$}\end{tabular}\\[8pt]
+125 & $(5,1023;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1463593012977857}{2875861001477625000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 4742 & 135592 & -196785 & -17938 & 18504 & -164981 & 220865\\-161723 & 220127 & 36642 & -38596 & 251931 & -315644 & -79523 & 86785\\39327 & -61796 & -245281 & 324201 & -29992 & 47153 & 283274 & -356885\\171631 & -212308 & 23812 & -39585 & -253235 & 299221 & 10465 & 0\end{array}$}\end{tabular}\\[8pt]
+126 & $(4,56;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1624697887902654849}{204995233098622956800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}17548 & 132437 & -26270 & 103227 & -26270 & 103227 & 305731 & -251300\\-26270 & 103227 & 305731 & -251300 & 305731 & -251300 & -494946 & 482984\end{array}$}\end{tabular}\\[8pt]
+127 & $(4,56;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2237150249890325499}{188279035210426657400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-225329 & 539866 & -31685 & -278873 & -31685 & -278873 & 57374 & 249207\\-31685 & -278873 & 57374 & 249207 & 57374 & 249207 & 148263 & -450866\end{array}$}\end{tabular}\\[8pt]
+128 & $(4,60;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{254018830525342133}{30027845200197838800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-53968 & -30569 & 110699 & -112274 & 110699 & -112274 & -269563 & 222075\\164251 & -181347 & -323116 & 290647 & -323116 & 290647 & 447936 & -431488\end{array}$}\end{tabular}\\[8pt]
+129 & $(4,60;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{14094485914483465883}{889012217805864640800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-68565 & 355954 & 68934 & -412950 & 68934 & -412950 & 68421 & 332223\\-140125 & -218763 & 98344 & 317172 & 98344 & 317172 & -194287 & -277857\end{array}$}\end{tabular}\\[8pt]
+130 & $(4,63;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{78185258104877}{3621970367576445000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}91584 & 160136 & 160136 & -289633 & 160136 & -289633 & -289633 & 296904\\160136 & -289633 & -289633 & 296904 & -289633 & 296904 & 296904 & -181952\end{array}$}\end{tabular}\\[8pt]
+131 & $(5,5;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{69885431881186891}{377421415292840495104000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 96618 & 123739 & 123739 & -344096\\0 & 0 & 0 & 0 & 26892 & -247248 & -247248 & 467605\\-96618 & -123739 & -123739 & 344096 & 0 & 0 & 0 & 0\\-26892 & 247248 & 247248 & -467605 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+132 & $(5,560;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{729552130954857259}{3134532397968187055040000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}77460 & 54998 & 87414 & -25160 & 54998 & -48678 & -25160 & -166211\\54998 & -48678 & -25160 & -166211 & -48678 & -86645 & -166211 & 492154\\38975 & -154337 & -373752 & 304063 & -154337 & 142458 & 304063 & -101507\\-154337 & 142458 & 304063 & -101507 & 142458 & 2289 & -101507 & -232041\end{array}$}\end{tabular}\\[8pt]
+133 & $(5,560;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{58263927244992003}{1827453857029607142755840000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}128124 & 3636 & -400895 & 147951 & 3636 & -45412 & 147951 & -149775\\3636 & -45412 & 147951 & -149775 & -45412 & -51311 & -149775 & 454883\\107139 & 76005 & -273114 & 245804 & 76005 & -94885 & 245804 & -217974\\76005 & -94885 & 245804 & -217974 & -94885 & -1984 & -217974 & 141109\end{array}$}\end{tabular}\\[8pt]
+134 & $(5,608;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{853536994858899983}{2171271632699596316800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-32183 & -84477 & -84477 & -31893 & -8849 & -85315 & 85069 & 31910\\125186 & -201979 & -201979 & 300350 & -131149 & 207315 & -1403 & -218762\\-8849 & 85069 & -85315 & 31910 & 214298 & -291144 & -291144 & 223993\\-131149 & -1403 & 207315 & -218762 & -278325 & 289084 & 289084 & -196651\end{array}$}\end{tabular}\\[8pt]
+135 & $(5,608;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3149021250202078981}{5004184087032106602880000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}2923 & 75245 & 75245 & -86547 & 130505 & -185649 & -177729 & 150533\\-20941 & -5383 & -5383 & -50724 & 96049 & -108315 & -119057 & 204742\\130505 & -177729 & -185649 & 150533 & -180833 & 189467 & 189467 & -124681\\96049 & -119057 & -108315 & 204742 & -272738 & 325323 & 325323 & -454332\end{array}$}\end{tabular}\\[8pt]
+136 & $(5,608;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{7212844717445993733}{7456607233096421135360000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -130316 & 130316 & 0 & 5925 & 62867 & 100177 & -168968\\0 & 87181 & -87181 & 0 & 202983 & -228639 & -352219 & 377875\\-5925 & -100177 & -62867 & 168968 & 0 & 167626 & -167626 & 0\\-202983 & 352219 & 228639 & -377875 & 0 & -210761 & 210761 & 0\end{array}$}\end{tabular}\\[8pt]
+137 & $(5,564;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{141693271291691529}{524342311754256592000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-35413 & -76345 & 35986 & 102371 & -3791 & 163798 & -34649 & -127913\\-3791 & 163798 & -34649 & -127913 & -80666 & -103405 & 180876 & 19389\\12446 & 303402 & -87020 & -227024 & -102600 & -232953 & 239085 & 108585\\-102600 & -232953 & 239085 & 108585 & 344959 & 24220 & -529434 & 152779\end{array}$}\end{tabular}\\[8pt]
+138 & $(5,45;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1492370246080549}{1852985261944750400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 32208 & 103835 & -43423 & -139994 & -17680 & 65055\\-32208 & -103835 & 0 & 0 & -119220 & 438680 & 180323 & -363741\\43423 & 139994 & 119220 & -438680 & 0 & 0 & -133748 & 269790\\17680 & -65055 & -180323 & 363741 & 133748 & -269790 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+139 & $(5,960;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1201199563946272157}{1839063466538089351120000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 197348 & -378322 & 54803 & -105058 & -143369 & 294651\\-283216 & 542933 & 48823 & -100341 & 129872 & -266912 & 643 & 8146\\31065 & -59552 & -129872 & 266912 & -48823 & 100341 & -5858 & -74264\\143369 & -294651 & 1133 & 14370 & 4082 & 51748 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+140 & $(5,624;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1537666233516861473}{10361552426581658493440000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & -161367 & 260811 & 92769 & -192212\\161367 & -260811 & -92769 & 192212 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 278598 & -378041 & -210000 & 309443\\-278598 & 378041 & 210000 & -309443 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+141 & $(5,101;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{814213404213043221}{1137891475059258968320000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-36702 & -78538 & -78538 & 397289 & 114702 & 55717 & 68545 & -280662\\2510 & 73468 & 73468 & -215853 & -142524 & 148470 & 159555 & -45687\\114702 & 68545 & 55717 & -280662 & -75843 & -26278 & -26278 & 223502\\-142524 & 159555 & 148470 & -45687 & 301984 & -322822 & -322822 & 274065\end{array}$}\end{tabular}\\[8pt]
+142 & $(5,101;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8422011337352855623}{14310956525563713817600000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 48664 & -48664 & 0 & 78336 & 17490 & 192751 & -288577\\0 & -55034 & 55034 & 0 & 66063 & -155519 & -343519 & 432976\\-78336 & -192751 & -17490 & 288577 & 0 & 126596 & -126596 & 0\\-66063 & 343519 & 155519 & -432976 & 0 & -132966 & 132966 & 0\end{array}$}\end{tabular}\\[8pt]
+143 & $(5,101;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{723189644764078673}{2229602389369243966720000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}24991 & -71345 & -71345 & 61445 & -156179 & 149592 & 17988 & 159948\\-92137 & 245387 & 245387 & -244866 & 109630 & -112420 & 36193 & -149188\\-156179 & 17988 & 149592 & 159948 & 437441 & -149356 & -149356 & -272089\\109630 & 36193 & -112420 & -149188 & -180244 & -60476 & -60476 & 452700\end{array}$}\end{tabular}\\[8pt]
+144 & $(5,519;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2555709449439763}{30333438191365922800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 15385 & -146919 & -146919 & 278453\\-14535 & 138795 & 138795 & -263056 & -9590 & 16863 & 16863 & -24137\\-851 & 8124 & 8124 & -15397 & -163840 & 288101 & 288101 & -412362\\173430 & -304964 & -304964 & 436498 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+145 & $(5,47;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{11588690942183502527}{6227729362993572343920000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}93376 & 104890 & -114456 & -91905 & 150679 & 41735 & -21983 & -127884\\-114456 & -91905 & -95689 & 35174 & -21983 & -127884 & 203906 & 178385\\150679 & 41735 & -21983 & -127884 & -382737 & -177808 & 172193 & 311351\\-21983 & -127884 & 203906 & 178385 & 172193 & 311351 & -351663 & -329851\end{array}$}\end{tabular}\\[8pt]
+146 & $(5,992;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{200358596968816273}{553075252157223591936000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\-125428 & 49546 & 264603 & -188721 & 264603 & -188721 & -403778 & 327896\\125428 & -49546 & -264603 & 188721 & -264603 & 188721 & 403778 & -327896\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+147 & $(5,992;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8345335823459478377}{6720856760359116258192000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-90138 & 187114 & -220284 & 291484 & -220284 & 291484 & -26396 & -295050\\91439 & -360183 & 41146 & 79400 & 41146 & 79400 & 160941 & -51221\\91439 & -360183 & 41146 & 79400 & 41146 & 79400 & 160941 & -51221\\-116645 & 408110 & 1743 & -164990 & 1743 & -164990 & 914 & -47956\end{array}$}\end{tabular}\\[8pt]
+148 & $(5,992;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{506456769176658779}{449801071795995383312000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\55325 & 207438 & -54511 & -363169 & -54511 & -363169 & 185682 & 386916\\-55325 & -207438 & 54511 & 363169 & 54511 & 363169 & -185682 & -386916\\0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+149 & $(5,103;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{8977039161301673}{43020226616174764800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-20116 & -43919 & -43919 & 149754 & -125299 & 144600 & 120594 & -372072\\168797 & -245624 & -245624 & 89335 & -135626 & 95882 & 90816 & 118272\\-125299 & 120594 & 144600 & -372072 & 52222 & -163150 & -163150 & 443421\\-135626 & 90816 & 95882 & 118272 & 160580 & -91105 & -91105 & -205858\end{array}$}\end{tabular}\\[8pt]
+150 & $(5,103;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{828950085459354839}{3197060551531908804992000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}9489 & 11799 & 11799 & 97240 & 191567 & -410714 & -44468 & 63807\\1704 & -98301 & -98301 & -5252 & -198499 & 434084 & 57229 & -115938\\191567 & -44468 & -410714 & 63807 & -102654 & 94885 & 94885 & 89759\\-198499 & 57229 & 434084 & -115938 & 46797 & -78057 & -78057 & -88779\end{array}$}\end{tabular}\\[8pt]
+151 & $(5,628;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1782004166473368917}{2452672546374861552000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-9988 & -56783 & 10458 & -37236 & -2453 & -114884 & -125757 & 183622\\-2453 & -114884 & -125757 & 183622 & -199555 & 347979 & 275795 & -451043\\-67848 & 260700 & -202107 & -76907 & 47712 & -237056 & 196963 & -8643\\47712 & -237056 & 196963 & -8643 & 5383 & 92377 & -285274 & 159179\end{array}$}\end{tabular}\\[8pt]
+152 & $(5,628;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{46769778056333567}{70169300037843706875000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}31522 & 143510 & -166495 & 111854 & 1766 & -71297 & 300591 & -188280\\1766 & -71297 & 300591 & -188280 & -76659 & -25517 & -326825 & 223051\\114540 & 187494 & -284195 & 204870 & -94584 & -166434 & 109695 & -234556\\-94584 & -166434 & 109695 & -234556 & 111095 & 175112 & -37918 & 300760\end{array}$}\end{tabular}\\[8pt]
+153 & $(5,433;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2755766554090241463}{27643309784734467430400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}25911 & -82242 & -82242 & 146360 & 36794 & -108 & -108 & -216611\\123834 & -105012 & -105012 & -67540 & 22046 & -166318 & -166318 & 408317\\116477 & -143725 & -143725 & 17244 & -144662 & 18461 & 18461 & 203770\\-258725 & 151236 & 151236 & 26828 & -66769 & 243705 & 243705 & -544673\end{array}$}\end{tabular}\\[8pt]
+154 & $(5,613;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{64450163453280917}{12563784648287565030400000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}5664 & -52839 & -52839 & 69922 & -52839 & 212699 & 69922 & -109522\\-52839 & 212699 & 212699 & -266068 & 69922 & -266068 & -109522 & 228938\\-52839 & 69922 & 212699 & -109522 & 212699 & -266068 & -266068 & 228938\\69922 & -109522 & -266068 & 228938 & -109522 & 228938 & 228938 & -243640\end{array}$}\end{tabular}\\[8pt]
+155 & $(5,729;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{4353630263669553}{63265668438845521600000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-84939 & -29650 & -29650 & 117316 & 17092 & 202526 & 202526 & -272757\\-29650 & 117316 & 117316 & -74296 & 202526 & -272757 & -272757 & 253325\\-29650 & 117316 & 117316 & -74296 & 202526 & -272757 & -272757 & 253325\\117316 & -74296 & -74296 & -41495 & -272757 & 253325 & 253325 & -124322\end{array}$}\end{tabular}\\[8pt]
+156 & $(5,437;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2185743559064587}{3517617923316190000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -61194 & 61194 & 0 & 0 & 172460 & -172460 & 0\\0 & 30255 & -30255 & 0 & 0 & -141521 & 141521 & 0\\0 & 288558 & -288558 & 0 & 0 & -399824 & 399824 & 0\\0 & -257620 & 257620 & 0 & 0 & 368885 & -368885 & 0\end{array}$}\end{tabular}\\[8pt]
+157 & $(5,437;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{17207575118691417}{21339370413697321025000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & -88947 & 88947 & 0 & 0 & 84338 & -84338 & 0\\0 & 423517 & -423517 & 0 & 0 & -424400 & 424400 & 0\\0 & -176671 & 176671 & 0 & 0 & 109860 & -109860 & 0\\0 & -163346 & 163346 & 0 & 0 & 235649 & -235649 & 0\end{array}$}\end{tabular}\\[8pt]
+158 & $(5,437;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{10185159341417010557}{6587923155239780652720000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-67920 & -71529 & -71529 & 330881 & -221282 & 149793 & 149793 & -129611\\83933 & -716 & -716 & -145769 & 223608 & -225215 & -225215 & 221495\\-44272 & 26039 & 26039 & 47729 & -151004 & 26552 & 26552 & -26231\\-354393 & 123477 & 123477 & -4732 & 474104 & 28824 & 28824 & -350988\end{array}$}\end{tabular}\\[8pt]
+159 & $(5,945;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{200607639057790431}{183403343487966162944000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-102001 & 53022 & 53022 & -51522 & 57213 & 61967 & 61967 & -210729\\-123460 & 96065 & 96065 & -86483 & 161831 & -269930 & -269930 & 370788\\292293 & -197472 & -197472 & 84837 & -227619 & -14844 & -14844 & 249307\\-127755 & 32246 & 32246 & 43873 & -7563 & 213132 & 213132 & -423227\end{array}$}\end{tabular}\\[8pt]
+160 & $(5,945;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2111976310256997093}{3214419668485395717580000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}38596 & -8311 & -8311 & -422884 & -69277 & -116414 & -116414 & 58650\\-231681 & 20131 & 20131 & 68569 & 15619 & 401321 & 401321 & -51045\\-146864 & 305857 & 305857 & 89406 & 132021 & -105372 & -105372 & 168833\\106129 & -62501 & -62501 & -11623 & -117282 & -161972 & -161972 & -172646\end{array}$}\end{tabular}\\[8pt]
+161 & $(5,993;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2764895030026724011}{513615251231758033920000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}45911 & 47720 & -132301 & -18897 & -132301 & -18897 & 232013 & 71419\\-132301 & -18897 & 173706 & 115666 & 173706 & 115666 & -132829 & -262849\\-132301 & -18897 & 173706 & 115666 & 173706 & 115666 & -132829 & -262849\\232013 & 71419 & -132829 & -262849 & -132829 & -262849 & -16768 & 533750\end{array}$}\end{tabular}\\[8pt]
+162 & $(5,621;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{2832231999020026609}{447941081978825427484000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 188843 & -217853 & 157511 & -304729 & -276231 & -29171\\-157511 & 304729 & -3334 & -12126 & 0 & 0 & 120448 & 229425\\-188843 & 217853 & 0 & 0 & 3334 & 12126 & 390624 & 46536\\276231 & 29171 & -390624 & -46536 & -120448 & -229425 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+163 & $(5,222;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1651360652845839501}{414177332265327222200000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 66398 & -22739 & 14682 & -43659 & 7647 & -22329 & 0\\0 & -230639 & 78984 & -104605 & 151654 & -54480 & 159086 & 0\\0 & -230639 & 78984 & -104605 & 151654 & -54480 & 159086 & 0\\0 & -4532 & 1552 & 457158 & 2980 & 238097 & -695255 & 0\end{array}$}\end{tabular}\\[8pt]
+164 & $(5,1016;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{339238114973793401}{305946580586819220000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & -147301 & -26258 & -26258 & 137250\\-169467 & -30209 & -30209 & 157903 & 285513 & 202209 & 202209 & -555383\\316769 & 56466 & 56466 & -295153 & -152746 & -108180 & -108180 & 297123\\-132767 & -94030 & -94030 & 258260 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+165 & $(5,757;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1497456138086954391}{2344746815719121282560000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-102286 & 193340 & 193340 & -252751 & 113756 & -37287 & -78441 & 125467\\-53433 & 44483 & 44483 & 63629 & 191996 & -219766 & -155037 & 133837\\113756 & -78441 & -37287 & 125467 & 25287 & -72988 & -72988 & 48904\\191996 & -155037 & -219766 & 133837 & -325934 & 376647 & 376647 & -331241\end{array}$}\end{tabular}\\[8pt]
+166 & $(5,757;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{12778292139946942907}{29717211422188802648800000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 150522 & -150522 & 0 & 190124 & -168711 & -220907 & 15809\\0 & -199609 & 199609 & 0 & 73444 & -11165 & -300224 & 421630\\-190124 & 220907 & 168711 & -15809 & 0 & -83906 & 83906 & 0\\-73444 & 300224 & 11165 & -421630 & 0 & -208262 & 208262 & 0\end{array}$}\end{tabular}\\[8pt]
+167 & $(5,757;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{1821702848961542451}{779075809314445873466000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}13689 & -240535 & -240535 & 47022 & 14064 & 364049 & -19802 & 59182\\24393 & 191595 & 191595 & -17059 & -238548 & -27782 & 34466 & -155793\\14064 & -19802 & 364049 & 59182 & -382421 & 2350 & 2350 & -36908\\-238548 & 34466 & -27782 & -155793 & 349408 & 139558 & 139558 & -243732\end{array}$}\end{tabular}\\[8pt]
+168 & $(5,1017;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{3015401203760311}{1583659543843563600000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}59906 & 20837 & 20837 & 49577 & -178589 & -194589 & -194589 & 334640\\-13778 & 15824 & 15824 & -280444 & 38627 & 187994 & 187994 & -70070\\-13778 & 15824 & 15824 & -280444 & 38627 & 187994 & 187994 & -70070\\-251194 & 162318 & 162318 & 300548 & -159737 & 83714 & 83714 & -463653\end{array}$}\end{tabular}\\[8pt]
+169 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{9678446144470417}{47417889785226202000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-159012 & 120790 & 138044 & -76273 & 138044 & -76273 & 191233 & -179404\\138044 & -76273 & -93359 & -14317 & 191233 & -179404 & -155451 & 92378\\138044 & -76273 & 191233 & -179404 & -93359 & -14317 & -155451 & 92378\\191233 & -179404 & -155451 & 92378 & -155451 & 92378 & -349576 & 561040\end{array}$}\end{tabular}\\[8pt]
+170 & $(5,1005;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{9383199707071869}{5921019061991586250000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-115546 & -346863 & 174 & 247803 & 174 & 247803 & 43300 & 6275\\174 & 247803 & -12047 & -5349 & 43300 & 6275 & -96333 & -266942\\174 & 247803 & 43300 & 6275 & -12047 & -5349 & -96333 & -266942\\43300 & 6275 & -96333 & -266942 & -96333 & -266942 & 351077 & 409019\end{array}$}\end{tabular}\\[8pt]
+171 & $(5,1021;0)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{500668015173637}{20129120541810000000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-15789 & 36646 & 36646 & -69653 & -53279 & 82915 & 82915 & -7871\\36646 & -69653 & -69653 & 192826 & 82915 & -7871 & -7871 & -126949\\-53279 & 82915 & 82915 & -7871 & 393183 & -380782 & -380782 & 294544\\82915 & -7871 & -7871 & -126949 & -380782 & 294544 & 294544 & -120862\end{array}$}\end{tabular}\\[8pt]
+172 & $(5,1021;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{46617596546400257}{23904832437939375000000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}44964 & 67039 & 67039 & -104169 & -296156 & 23986 & 23986 & -41206\\67039 & -104169 & -104169 & 94276 & 23986 & -41206 & -41206 & 319968\\-296156 & 23986 & 23986 & -41206 & 171838 & 293153 & 293153 & -254235\\23986 & -41206 & -41206 & 319968 & 293153 & -254235 & -254235 & -260743\end{array}$}\end{tabular}\\[8pt]
+173 & $(5,1021;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{5156467371309277}{3991895441611333593750000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}0 & 0 & 0 & 0 & -98594 & -112503 & -112503 & 292684\\0 & 0 & 0 & 0 & -112503 & 292684 & 292684 & -441947\\98594 & 112503 & 112503 & -292684 & 0 & 0 & 0 & 0\\112503 & -292684 & -292684 & 441947 & 0 & 0 & 0 & 0\end{array}$}\end{tabular}\\[8pt]
+174 & $(5,1023;1)$ & \begin{tabular}[t]{@{}l@{}}$w_i=\displaystyle \frac{32537947759658797}{169761371750002687500000000000000000}$\\[3pt]{\scriptsize$\begin{array}{@{}rrrrrrrr@{}}-79328 & -281850 & -281850 & 195844 & -281850 & 195844 & 195844 & 54893\\-281850 & 195844 & 195844 & 54893 & 195844 & 54893 & 54893 & -187908\\-281850 & 195844 & 195844 & 54893 & 195844 & 54893 & 54893 & -187908\\195844 & 54893 & 54893 & -187908 & 54893 & -187908 & -187908 & -79251\end{array}$}\end{tabular}\\[8pt]
+\end{longtable}
+\endgroup
+
+\subsection*{Certificate package}
+\begingroup\raggedright
+The accompanying \texttt{2026-10-14} local certificate snapshot is
+\nolinkurl{srg-gegenbauer-counting.zip}. Within
+\nolinkurl{results/certificates/405_132_63_33/}, its exact input is
+\nolinkurl{ordinary_counting_certificate/exact_certificate.json}.
+The common command \texttt{python3 -S code/verify.py} checks this file
+against the printed tables using Python's standard library. The input
+manifest, release hashes, and full verification inventory are specified
+in Appendix~A of the main article and in
+\nolinkurl{docs/reproducibility_snapshot.md}.\par
+\endgroup
+
+
+\clearpage\section{The all-degree five-point relaxation for 405}\label{app:405-tail}
+The same parameters admit a rational feasible point for the five-point
+real-count relaxation at \emph{every} Gegenbauer degree. Temporarily put
+$q_F=N_F/(405|\operatorname{Aut}F|)$ and choose
+\[
+ \begin{array}{c|rrrr}
+ F&K_5\setminus P_3&K_5\setminus2K_2&K_5\setminus K_2&K_5\\
+ q_F&988060&134777&287429&68038
+ \end{array}
+\]
+The first graph has two adjacent edges deleted.  Exact elimination
+reconstructs all $52$ nonnegative counts and verifies the ordinary
+extension equations.  All profile matrices with at most three
+reference vertices are PSD at every degree.  The accompanying
+all-degree verifier checks the $66$ necessary low-degree matrices
+by exact Schur elimination; the remaining degrees follow from
+the rational tail estimate described below.  This is a feasible
+point of a real relaxation, not a graph construction.
+
+Here $P_\ell^{(D)}$ is the Gegenbauer polynomial for $S^{D-1}$,
+normalized by $P_\ell^{(D)}(1)=1$. At every degree the profile matrices
+use the extension coefficients of Section~S1 and the homogeneous kernel
+$\kappa_\ell(z,h,h')=(hh')^{\ell/2}P_\ell^{(D)}(z/\sqrt{hh'})$.
+For $q\in\mathbb Z_{\ge0}$ and $D>2$, put
+\[
+ B_{q,D}(s)=\sum_{j=0}^q\binom qj s^{q-j}(1-s)^j
+ \prod_{a=1}^j\frac{2a-1}{D+2a-3},
+\]
+with the empty product equal to one.  The normalized Gegenbauer
+integral representation \cite[18.10.4]{DLMF} gives
+$|P_\ell^{(D)}(t)|\le B_{q,D}(s)$ whenever $t^2\le s<1$
+and $\ell\ge2q$.  Indeed,
+$P_\ell^{(D)}(t)=\mathbb E(t+i\sqrt{1-t^2}Z)^\ell$,
+where $Z$ is the first coordinate of a uniform point on
+$S^{D-2}$; take absolute values and use
+$\mathbb E Z^{2j}=\prod_{a=1}^j(2a-1)/(D+2a-3)$.
+The expression $t^2+(1-t^2)Z^2$ is at most one and increases with
+$t^2$, which proves the bound.
+For an anchor with $1\le m\le3$, undo the common positive normalization
+of Section~S1, which preserves positive semidefiniteness. Fix its
+reference graph $H$, put $D=30-m$, and enumerate its profiles as
+$\sigma_1,\ldots,\sigma_{2^m}$ in binary lexicographic order. Put
+$n_i=N_{H_{\sigma_i}}$ and $c_{ij}(e)=N_{H_{\sigma_i,\sigma_j;e}}$.
+Swapping the two new labels gives $c_{ij}(e)=c_{ji}(e)$.
+These nonnegative single-profile and distinct-pair masses obey
+$\sum_{j,e}c_{ij}(e)=(404-m)n_i$.
+After dividing coordinate $i$ by $h_{\sigma_i}^{\ell/2}$, the diagonal contribution is
+$\operatorname{diag}(n_i)$.  For any real column $u=(u_i)_{i=1}^{2^m}$, the absolute quadratic
+contribution of all distinct pairs is at most
+$(404-m)B_{q,D}(s)\sum_i n_i u_i^2$, by
+$2|u_iu_j|\le u_i^2+u_j^2$.  Thus every tail matrix is PSD if
+$(404-m)B_{q,D}(s)\le1$.
+
+The exact maximum squared residual angles and sufficient tail
+cutoffs for the seven nonempty anchor types are
+\[
+\begin{array}{c|c|c|c}
+H&D&s&\ell\text{ in the tail}\\\hline
+K_1&29&3/35&\ell\ge8\\
+\overline{K_2}&28&1/8&\ell\ge8\\
+K_2&28&9/64&\ell\ge8\\
+\overline{K_3}&27&1/4&\ell\ge10\\
+K_2\mathbin{\dot\cup}K_1&27&867/4715&\ell\ge10\\
+P_3&27&3/11&\ell\ge12\\
+K_3&27&4/21&\ell\ge10
+\end{array}
+\]
+All heights are positive, and the displayed tail inequalities are
+checked over $\mathbb Q$.  Hence increasing the degree alone
+cannot exclude $405$ within this five-point real-count relaxation,
+whereas seven points and
+degrees at most two suffice.  The sufficiency of the intermediate
+six-point level is not determined by these results.
+
+
+\begingroup\small
+\begin{thebibliography}{DLMF}
+\bibitem[DLMF]{DLMF}
+NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/18.10.E4}{Section~18.10(ii), equation~18.10.4},
+Laplace-type integral representation for ultraspherical polynomials.
+\end{thebibliography}
+\endgroup
+
+\end{document}

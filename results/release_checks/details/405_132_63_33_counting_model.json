@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "parameters": [
+    405,
+    132,
+    63,
+    33
+  ],
+  "variables": 1252,
+  "free_core_variables": 174,
+  "exhaustive_mapping": [
+    {
+      "n": 1,
+      "classes": 1,
+      "labelled_masks": 1,
+      "permutation_checks": 1
+    },
+    {
+      "n": 2,
+      "classes": 2,
+      "labelled_masks": 2,
+      "permutation_checks": 4
+    },
+    {
+      "n": 3,
+      "classes": 4,
+      "labelled_masks": 8,
+      "permutation_checks": 24
+    },
+    {
+      "n": 4,
+      "classes": 11,
+      "labelled_masks": 64,
+      "permutation_checks": 264
+    },
+    {
+      "n": 5,
+      "classes": 34,
+      "labelled_masks": 1024,
+      "permutation_checks": 4080
+    },
+    {
+      "n": 6,
+      "classes": 156,
+      "labelled_masks": 32768,
+      "permutation_checks": 112320
+    },
+    {
+      "n": 7,
+      "classes": 1044,
+      "labelled_masks": 2097152,
+      "permutation_checks": 5261760
+    }
+  ],
+  "exact_extension_rows": 4135,
+  "exact_triangular_elimination_rows": 1078,
+  "common_recipe_denominator": 10908335822475,
+  "all_extension_rows_reduce_identically_to_zero": true,
+  "degree2_degree6_recipes_identical": true,
+  "uniform_count_upper_bound": "y_H <= 2^binom(|H|,2)",
+  "upper_bound_proof": "The empty extension identity is sum_alpha y_(H,alpha)=2^|H| y_H. Nonnegativity bounds each summand; induction from y_K1=1 proves the displayed bound.",
+  "elapsed_seconds": 1.723,
+  "scope": "Audit of exact count coordinates and atlas mapping only; no standalone nonexistence claim."
+}

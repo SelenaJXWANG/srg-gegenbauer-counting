@@ -1,0 +1,20 @@
+# Generated local runs and verification output
+results/runs/
+results/latest_verification/
+# Python environments and bytecode
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# LaTeX intermediates (distributed PDFs remain tracked)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# Local operating-system/editor files
+.DS_Store
+Thumbs.db
+*.swp

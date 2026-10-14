@@ -1,0 +1,129 @@
+{
+  "format": "srg-local-sos-v1",
+  "parameters": [
+    550,
+    162,
+    75,
+    36
+  ],
+  "level": 5,
+  "normalization": "X_F=N_F/v; free variables are nonnegative X_F",
+  "free_graphs": [
+    {
+      "size": 5,
+      "bits": "0011111111"
+    },
+    {
+      "size": 5,
+      "bits": "0111111011"
+    },
+    {
+      "size": 5,
+      "bits": "0111111111"
+    },
+    {
+      "size": 5,
+      "bits": "1111111111"
+    }
+  ],
+  "terms": [
+    {
+      "embedding": "r",
+      "anchor_size": 3,
+      "anchor_bits": "001",
+      "degree": 1,
+      "kind": "sos",
+      "vector": [
+        "1/10",
+        "1/5",
+        "1/5",
+        "-1/2",
+        "2/5",
+        "-7/10",
+        "-7/10",
+        "1"
+      ],
+      "weight": "11"
+    },
+    {
+      "embedding": "r",
+      "anchor_size": 3,
+      "anchor_bits": "011",
+      "degree": 1,
+      "kind": "sos",
+      "vector": [
+        "1/10",
+        "1/10",
+        "-1/2",
+        "2/5",
+        "-1/2",
+        "2/5",
+        "1",
+        "-4/5"
+      ],
+      "weight": "22"
+    },
+    {
+      "embedding": "r",
+      "anchor_size": 3,
+      "anchor_bits": "011",
+      "degree": 2,
+      "kind": "sos",
+      "vector": [
+        "1/5",
+        "-1",
+        "-1/5",
+        "3/10",
+        "-1/5",
+        "3/10",
+        "1/2",
+        "1/10"
+      ],
+      "weight": "42"
+    },
+    {
+      "embedding": "r",
+      "anchor_size": 3,
+      "anchor_bits": "111",
+      "degree": 1,
+      "kind": "sos",
+      "vector": [
+        "-3/10",
+        "1/2",
+        "1/2",
+        "-4/5",
+        "1/2",
+        "-4/5",
+        "-4/5",
+        "1"
+      ],
+      "weight": "1"
+    },
+    {
+      "embedding": "r",
+      "anchor_size": 3,
+      "anchor_bits": "111",
+      "degree": 2,
+      "kind": "sos",
+      "vector": [
+        "1/5",
+        "-1",
+        "-1",
+        "9/10",
+        "-1",
+        "9/10",
+        "9/10",
+        "1/10"
+      ],
+      "weight": "105"
+    }
+  ],
+  "constant": "-63076401262495/53087661",
+  "slopes": [
+    "-2768645749393/2140277314725",
+    "-78000970156/7866037575",
+    "-1187129208644/7847683487325",
+    "-2655019414/12971377665"
+  ],
+  "discovery_vector_denominator": 10
+}
