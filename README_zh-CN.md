@@ -23,6 +23,8 @@
 | 703, 182, 81, 35 | Liao–Yu 已排除 | 不需要 |
 | 1344, 221, 88, 26 | Liao–Yu 已排除 | 不需要 |
 
+[arXiv TeX 原始文件包](paper/arxiv-sources.zip)
+
 ## 阅读证明
 
 - [正文 PDF](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) 与 [TeX 源代码](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex)。
@@ -31,7 +33,7 @@
 
 正文对每组参数都给出明确矛盾。补充材料收录篇幅较长的 405 函数与系数表，以及五点模型在所有次数上的比较。405 的两份记录分开存放：`ordinary_counting_certificate/` 是本篇使用的普通计数证明；`earlier_structural_certificate/` 是包含额外零计数来源的早期替代证书。两者不能混用，也不算作两组排除结果。
 
-本资料为 **2026-10-14 本地证书快照**，尚未指定公开项目版本。固定输入清单为 [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256)，SHA-256 为 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`。涵盖范围与证书入口详见[复现记录](docs/reproducibility_snapshot.md)。
+本资料为 **2026-10-14 证书快照**，已公开于固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。正文与补充文件已加入公开来源链接，证书数值表保持不变；尚未分配 DOI 或 arXiv 编号。固定输入清单为 [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256)，SHA-256 为 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`。涵盖范围与证书入口详见[复现记录](docs/reproducibility_snapshot.md)。
 
 ## 精确核验
 

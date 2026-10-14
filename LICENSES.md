@@ -16,6 +16,7 @@ for the manuscript or certificates. Use the manuscript author list and identify
 any modified version when attributing the scientific material. `CITATION.cff`
 provides citation metadata; no DOI or arXiv identifier is assigned by this file.
 
-The original PDF, TeX, verification engines and mathematical input files are
-byte-preserved in this preparation. These license notices apply at repository
-level without modifying their pinned contents.
+The verification engines and mathematical input files remain byte-preserved.
+The manuscript PDF/TeX repository-link revision is recorded in
+`extras/source_history.md` and pinned with updated hashes in
+`extras/file_mapping.json`. These license notices apply at repository level.

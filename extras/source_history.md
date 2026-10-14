@@ -21,3 +21,7 @@ The article and supplement are copied with title-and-full-date filenames. The ma
 路徑轉接器先核對雜湊，再建立暫存樹，讓檔名整理不必改動已核驗演算法的內部匯入與相對路徑。暫存清單只列實際保留的輸入；過期純文字沿革、舊獨立理論 TeX、重複核驗摘要與舊報告不收錄。這些刪除不影響算術。所有次數比較的論證已在目前 405 補充資料中。
 
 405 普通計數證書與早期含結構零計數的證書分開分類，方向與權重不能交叉使用。文章檔名包含完整標題與日期；正式核驗前會更新對應雜湊。
+
+## Repository-link manuscript revision (14 October 2026)
+
+The article and 405 supplement now identify the public repository and the fixed certificate snapshot `85cd39b74c9ef8a61ab746deb1102af3eeae7e10`. Repository and certificate links, the replay command, licensing, and recorded hosted verification references were added. Mathematical inputs, verification engines, printed coefficient tables, and mathematical display environments are unchanged. Updated PDF/TeX hashes are pinned in `file_mapping.json`; their preceding publication hashes are retained as `previous_sha256`. The full checks for this documentation revision are in `results/release_checks/documentation_update_verification.json`.

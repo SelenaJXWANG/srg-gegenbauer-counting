@@ -1,5 +1,5 @@
 {
-  "description": "Public paths and exact source hashes. Mathematical inputs and engines are byte-preserved. Runtime paths exist only in isolated temporary trees. Paper entries identify the final 2026-10-14 article and supplement.",
+  "description": "Public paths and pinned source hashes. Mathematical inputs and engines are byte-preserved. Paper entries identify the 2026-10-14 repository-link revision; previous_sha256 retains its initial-publication hash. Runtime paths exist only in isolated temporary trees.",
   "entries": [
     {
       "source": "data/legacy_ten/atlas_graphs.txt",
@@ -455,25 +455,33 @@
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
       "path": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex",
       "runtime_path": "paper/srg_counting_gegenbauer_article_1014.tex",
-      "sha256": "054b1c60c38b121a0a9794068da807bc85e453e4ca5778a7a703f9ed5ae19f4a"
+      "sha256": "a30bb21aaefa0b500b0d2678c379feb4550060f5f41f80593ec9156548573e8d",
+      "previous_sha256": "054b1c60c38b121a0a9794068da807bc85e453e4ca5778a7a703f9ed5ae19f4a",
+      "documentation_revision": "GitHub repository links added; mathematical tables unchanged"
     },
     {
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf",
       "path": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf",
       "runtime_path": "paper/srg_counting_gegenbauer_article_1014.pdf",
-      "sha256": "f3eefcc94e6f32c3be3a3d1514ae0e7d105316b7a7f4a8875c3bd58d9c919a43"
+      "sha256": "ad2d9c067adb6f6bdc0f6ab1e275474d692092038885cde031c2eb39646b3d5b",
+      "previous_sha256": "f3eefcc94e6f32c3be3a3d1514ae0e7d105316b7a7f4a8875c3bd58d9c919a43",
+      "documentation_revision": "GitHub repository links added; mathematical tables unchanged"
     },
     {
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex",
       "path": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex",
       "runtime_path": "paper/srg_counting_gegenbauer_article_1014_405_supplement.tex",
-      "sha256": "150badf6b6dc9db5a1dd1bfb8492c844c0990a5aa5b1787ad04e258a9e50fe62"
+      "sha256": "cc736142563be94c18d75b25d4549c9fbcb1157dd058fd0d83ece7b427be1f9d",
+      "previous_sha256": "150badf6b6dc9db5a1dd1bfb8492c844c0990a5aa5b1787ad04e258a9e50fe62",
+      "documentation_revision": "GitHub repository links added; mathematical tables unchanged"
     },
     {
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf",
       "path": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf",
       "runtime_path": "paper/srg_counting_gegenbauer_article_1014_405_supplement.pdf",
-      "sha256": "dbd97fc026292ed6fe1eaa97bd62323658be4d7107c41f90a1358e43a21a1f5a"
+      "sha256": "ee3db27bdec2fff4c2fb5c4e17680aa099666d9d66a9297cf19e07569c890246",
+      "previous_sha256": "dbd97fc026292ed6fe1eaa97bd62323658be4d7107c41f90a1358e43a21a1f5a",
+      "documentation_revision": "GitHub repository links added; mathematical tables unchanged"
     }
   ]
 }

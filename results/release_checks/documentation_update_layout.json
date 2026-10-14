@@ -1,0 +1,40 @@
+{
+  "main": {
+    "pages": 26,
+    "github_links": 14,
+    "link_pages": [
+      3,
+      18,
+      19,
+      26
+    ],
+    "annotations_within_page": true,
+    "characters_within_page": true,
+    "contact_sheets": [
+      "main-contact-1.png",
+      "main-contact-2.png",
+      "main-contact-3.png",
+      "main-contact-4.png",
+      "main-contact-5.png"
+    ],
+    "visual_review": "PASS: all contact sheets and enlarged repository-link pages reviewed; no clipping, overlaps, or unresolved references"
+  },
+  "supplement": {
+    "pages": 15,
+    "github_links": 7,
+    "link_pages": [
+      1,
+      14
+    ],
+    "annotations_within_page": true,
+    "characters_within_page": true,
+    "contact_sheets": [
+      "supplement-contact-1.png",
+      "supplement-contact-2.png",
+      "supplement-contact-3.png"
+    ],
+    "visual_review": "PASS: all contact sheets and enlarged repository-link pages reviewed; no clipping, overlaps, or unresolved references"
+  },
+  "mathematical_tables_byte_unchanged": true,
+  "native_compilation": "PASS: both revised TeX sources compiled with the built-in editor; PDFs exported with its bundled Tectonic executable"
+}

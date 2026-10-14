@@ -1,7 +1,7 @@
 {
   "prepared_utc": "2026-10-14T12:48:45.879148+00:00",
   "source_archive_sha256": "2422d831eda606a8c0e7ad42505ae6414aa6dd3015eab97bc0e7ecab379f6fbc",
-  "status": "PREPARED_FOR_INITIAL_UPLOAD",
+  "status": "PUBLISHED_SNAPSHOT_WITH_MANUSCRIPT_LINK_REVISION",
   "manuscript_authors": [
     "Zhen-Qi Liao",
     "Jiaxin Wang",
@@ -34,6 +34,15 @@
   "organization_not_created": "srg-counting-research was considered; latest instruction selects personal repository",
   "publication_blocker": null,
   "collaborator_accounts": "pending; no invitations sent",
-  "hosted_verification": "pending initial upload",
-  "github_connection": "confirmed SelenaJXWANG; repository push permission verified"
+  "hosted_verification": {
+    "snapshot": "85cd39b74c9ef8a61ab746deb1102af3eeae7e10",
+    "result": "PASS: Python 3.9 and 3.12",
+    "workflow_url": "https://github.com/SelenaJXWANG/srg-gegenbauer-counting/actions/runs/38571633757"
+  },
+  "github_connection": "confirmed SelenaJXWANG; repository push permission verified",
+  "publication_commit": "85cd39b74c9ef8a61ab746deb1102af3eeae7e10",
+  "manuscript_link_revision": {
+    "base_commit": "85cd39b74c9ef8a61ab746deb1102af3eeae7e10",
+    "scope": "repository links and reproducibility metadata; proof data and tables unchanged"
+  }
 }

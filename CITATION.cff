@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use these certificates or verification programs, please cite the accompanying manuscript and identify the release used."
+message: "If you use these certificates or verification programs, please cite the accompanying manuscript and identify the commit or release used."
 type: software
 license: MIT
 repository-code: "https://github.com/SelenaJXWANG/srg-gegenbauer-counting"
@@ -31,4 +31,4 @@ preferred-citation:
     - family-names: Cai
       given-names: Jianfeng
   year: 2026
-  notes: "Manuscript dated 14 October 2026. Code: MIT; paper and certificates: CC BY 4.0. Repository: SelenaJXWANG/srg-gegenbauer-counting. No release, arXiv identifier or DOI is assigned."
+  notes: "Manuscript dated 14 October 2026. Code: MIT; paper and certificates: CC BY 4.0. Repository: SelenaJXWANG/srg-gegenbauer-counting; fixed certificate snapshot: 85cd39b74c9ef8a61ab746deb1102af3eeae7e10. No release, arXiv identifier or DOI is assigned."

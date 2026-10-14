@@ -7,7 +7,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \definecolor{inkblue}{RGB}{25,68,88}
-\usepackage[colorlinks=true,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue]{hyperref}
+\usepackage[colorlinks=true,breaklinks=true,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue]{hyperref}
 \hypersetup{pdftitle={Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting},pdfauthor={Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -174,6 +174,15 @@ positivity and counting information. For $375$, $441$, and $575$,
 Section~\ref{sec:structural} adds structural information to the same
 method. The displayed orders record the available certificates;
 minimal orders are not asserted.
+
+\paragraph{Data and code availability.}
+The article, supplementary material, exact certificates, and verification
+programs are available from the
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting}{public companion repository}.
+The certificate data used in the proofs are identified by the fixed
+repository snapshot \href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10}{\texttt{85cd39b}}~\cite{certificateData}.
+Appendix~\ref{app:delivery} gives the certificate locations and the
+command for reproducing their exact arithmetic checks.
 
 Section~\ref{sec:method} develops the construction and its Lagrange
 dual. Sections~\ref{sec:direct} and~\ref{sec:structural} give the
@@ -1357,12 +1366,20 @@ Section~\ref{sec:structural} are treated explicitly by their separate
 structural arguments.
 
 \subsection{Certificate snapshot and verification}\label{app:delivery}
-The companion archive is \nolinkurl{srg-gegenbauer-counting.zip},
-the local certificate snapshot dated \texttt{2026-10-14}. Its
-\texttt{paper/} directory contains this
-article and Supplement~\cite{supp405}, in PDF and TeX, with the full
-title and date in each filename. The file
-\nolinkurl{extras/certificate_inputs.sha256} lists the fixed mathematical
+The public companion repository is
+\begin{center}\small
+\url{https://github.com/SelenaJXWANG/srg-gegenbauer-counting}
+\end{center}
+For reproducibility, the certificate snapshot dated \texttt{2026-10-14}
+is fixed at commit
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10}{\texttt{85cd39b}}~\cite{certificateData}.
+Readers may download that snapshot using GitHub's source archive or
+check it out with Git. This manuscript revision adds repository
+references without altering the certificate data or printed numerical tables.
+The repository's \href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/main/paper}{\texttt{paper/} directory}
+contains the article and Supplement~\cite{supp405}, in PDF and TeX.
+The \href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/blob/85cd39b74c9ef8a61ab746deb1102af3eeae7e10/extras/certificate_inputs.sha256}{fixed-input manifest}
+\nolinkurl{extras/certificate_inputs.sha256} lists the mathematical
 inputs and exact verification engines. Its SHA-256 is
 \begin{center}\small\ttfamily
 58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b
@@ -1377,7 +1394,10 @@ parameter set. A case directory is
 \nolinkurl{results/certificates/v_k_lambda_mu/}, with the four numbers
 substituted for its name. The exact paths, supporting counting and
 structural source files, and the corresponding verification engines
-are indexed in \nolinkurl{extras/certificate_index.json}.
+are indexed in
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/blob/85cd39b74c9ef8a61ab746deb1102af3eeae7e10/extras/certificate_index.json}{\nolinkurl{extras/certificate_index.json}}.
+The complete data are in the
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10/results/certificates}{\texttt{results/certificates/} directory}.
 \begin{table}[H]
 \centering\small
 \caption{Certificate inputs used for the displayed contradictions.
@@ -1401,8 +1421,15 @@ $(1344,221,88,26)$ & Tables~\ref{tab:direct-functions} and~\ref{tab:direct-coeff
 \bottomrule
 \end{tabular}
 \end{table}
-From the extracted repository root, run
-\begin{center}\ttfamily python3 -S code/verify.py\end{center}
+To reproduce the fixed snapshot, run
+\begingroup\small
+\begin{verbatim}
+git clone https://github.com/SelenaJXWANG/srg-gegenbauer-counting.git
+cd srg-gegenbauer-counting
+git checkout 85cd39b74c9ef8a61ab746deb1102af3eeae7e10
+python3 -S code/verify.py
+\end{verbatim}
+\endgroup
 This requires Python 3.9 or later and only its standard library.
 The five stages check the retained ten-case constructions, the ordinary
 counting proof and all-degree comparison for $405$, the actual short
@@ -1416,6 +1443,16 @@ the retained check for this release is
 \nolinkurl{results/release_checks/summary.json}. No SDP solver is needed.
 The common command also stages the preserved engines with their required
 input paths; individual engine files are not separate public entry points.
+
+The same command is run by the repository's
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/actions}{GitHub Actions workflow}.
+For the fixed snapshot above, it completed successfully under Python
+3.9 and 3.12; the
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/actions/runs/38571633757}{recorded workflow run}
+provides the execution logs. These checks verify the finite rational
+calculations, while the counting and positivity arguments in the article
+justify the mathematical implications. Code is licensed under MIT;
+the article, supplement, and certificate data are licensed under CC BY 4.0.
 
 Where earlier raw JSON certificates are retained, they need not match
 the printed five-point directions. The TeX tables are
@@ -1786,7 +1823,14 @@ Z.-Q. Liao, J. Wang, W.-H. Yu and J. Cai,
 \emph{Exact rational certificate for $(405,132,63,33)$},
 supplementary material to the present article (14 October 2026),
 distributed in the \texttt{paper/} directory of the certificate snapshot
-identified in Appendix~\ref{app:delivery}.
+identified in Appendix~\ref{app:delivery},
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/main/paper}{available online}.
+\bibitem[Data]{certificateData}
+Z.-Q. Liao, J. Wang, W.-H. Yu and J. Cai,
+\emph{Certificates and exact verification programs for strongly regular graph nonexistence},
+GitHub repository (14 October 2026), certificate snapshot
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10}{\texttt{85cd39b}},
+\url{https://github.com/SelenaJXWANG/srg-gegenbauer-counting}.
 \end{thebibliography}
 \endgroup
 \end{document}

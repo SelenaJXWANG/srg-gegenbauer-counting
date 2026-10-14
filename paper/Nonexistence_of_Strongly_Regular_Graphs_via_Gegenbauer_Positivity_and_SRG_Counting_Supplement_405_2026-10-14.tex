@@ -7,7 +7,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \definecolor{inkblue}{RGB}{25,68,88}
-\usepackage[colorlinks=true,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue]{hyperref}
+\usepackage[colorlinks=true,breaklinks=true,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue]{hyperref}
 \hypersetup{pdftitle={Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting},pdfauthor={Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -48,6 +48,13 @@ This supplement specifies all $174$ sources and their coefficients for
 $(405,132,63,33)$, including every value of all $107$ weight functions.
 It also gives formulas that recover every coefficient of the contradiction
 from this printed data. No numerical optimizer is part of this specification.
+
+The article, this supplement, and the machine-readable certificate are
+publicly available from
+\url{https://github.com/SelenaJXWANG/srg-gegenbauer-counting}.
+The fixed certificate snapshot is
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10}{\texttt{85cd39b}};
+the certificate locations and verification command are given below.
 
 
 A graph in the tables is specified by $(h,b)$: it has vertex set
@@ -376,15 +383,22 @@ $i$&$(m,b;\ell)$&$w_i$ and $f_i$\\\midrule
 
 \subsection*{Certificate package}
 \begingroup\raggedright
-The accompanying \texttt{2026-10-14} local certificate snapshot is
-\nolinkurl{srg-gegenbauer-counting.zip}. Within
-\nolinkurl{results/certificates/405_132_63_33/}, its exact input is
-\nolinkurl{ordinary_counting_certificate/exact_certificate.json}.
+The public companion repository is
+\url{https://github.com/SelenaJXWANG/srg-gegenbauer-counting}.
+Its \texttt{2026-10-14} certificate snapshot is fixed at commit
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10}{\texttt{85cd39b}}.
+Within \nolinkurl{results/certificates/405_132_63_33/}, the exact input is
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/blob/85cd39b74c9ef8a61ab746deb1102af3eeae7e10/results/certificates/405_132_63_33/ordinary_counting_certificate/exact_certificate.json}{\nolinkurl{ordinary_counting_certificate/exact_certificate.json}}.
 The common command \texttt{python3 -S code/verify.py} checks this file
 against the printed tables using Python's standard library. The input
 manifest, release hashes, and full verification inventory are specified
-in Appendix~A of the main article and in
-\nolinkurl{docs/reproducibility_snapshot.md}.\par
+in Appendix~A of the main article and in the
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/blob/main/docs/reproducibility_snapshot.md}{repository's reproducibility record}.
+For the fixed snapshot, the
+\href{https://github.com/SelenaJXWANG/srg-gegenbauer-counting/actions/runs/38571633757}{GitHub Actions run}
+passed all five exact verification stages under Python 3.9 and 3.12.
+This supplement and the certificate data are licensed under CC BY 4.0;
+the verification code is licensed under MIT.\par
 \endgroup
 
 

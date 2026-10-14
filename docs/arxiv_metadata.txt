@@ -13,3 +13,11 @@ This plain-text abstract is for the arXiv metadata form. The manuscript retains 
 The copied abstract uses no document-specific citation commands or environments.
 
 Metadata guidance: https://info.arxiv.org/help/prep.html
+
+Suggested Comments field:
+Code, certificates and verification programs: https://github.com/SelenaJXWANG/srg-gegenbauer-counting . Includes supplementary material for (405,132,63,33).
+
+Fixed certificate snapshot:
+https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10
+
+The source ZIP contains both standalone TeX files and 00README.json, with PDFLaTeX compilation ordered as main article followed by the 405 supplement. It has not yet been processed by the arXiv submission system.

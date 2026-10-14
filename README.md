@@ -23,6 +23,8 @@ The work naturally extends Liao–Yu. It gives certificates for the following te
 | 703, 182, 81, 35 | Previously excluded by Liao–Yu | Not needed |
 | 1344, 221, 88, 26 | Previously excluded by Liao–Yu | Not needed |
 
+[arXiv TeX source ZIP](paper/arxiv-sources.zip)
+
 ## Read the proofs
 
 - [Main article PDF](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) and [editable TeX](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.tex).
@@ -31,7 +33,7 @@ The work naturally extends Liao–Yu. It gives certificates for the following te
 
 The main article states an explicit contradiction for every parameter tuple. The supplement records the long 405 coefficient/function tables and the all-degree five-point comparison. The two 405 records are separated: `ordinary_counting_certificate/` is the proof used by this article; `earlier_structural_certificate/` is a retained alternative with extra zero-count sources. They are not interchangeable and do not count as two parameter exclusions.
 
-This is the **2026-10-14 local certificate snapshot**; no public repository revision has been assigned. The fixed-input manifest is [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256), with SHA-256 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`. Detailed scope and the certificate entry points are in the [reproducibility record](docs/reproducibility_snapshot.md).
+The **2026-10-14 certificate snapshot** is publicly available at fixed commit [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10). The article and supplement now link to this snapshot; their displayed certificate coefficients are unchanged. No DOI or arXiv identifier has been assigned. The fixed-input manifest is [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256), with SHA-256 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`. Detailed scope and the certificate entry points are in the [reproducibility record](docs/reproducibility_snapshot.md).
 
 ## Exact verification
 
@@ -96,7 +98,7 @@ covers repository creation, coauthor access, exact verification, releases and DO
 archiving. [Draft release notes](docs/release_notes_v1.0.0.md) are also provided.
 
 GitHub Actions is configured to run the exact verifier on pushes to `main` and
-pull requests. Its hosted execution must be checked after upload. Repository
+pull requests. The [initial publication run](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/actions/runs/38571633757) passed all five exact stages on Python 3.9 and 3.12. Each later revision has its own workflow result. Repository
 destination is [SelenaJXWANG/srg-gegenbauer-counting](https://github.com/SelenaJXWANG/srg-gegenbauer-counting), a public personal repository.
 Coauthor access remains to be configured using the authors' GitHub usernames.
 The bundled local exact checks passed; consult the Actions tab for hosted results.
