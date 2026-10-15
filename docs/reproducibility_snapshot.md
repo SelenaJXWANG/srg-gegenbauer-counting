@@ -1,6 +1,6 @@
 # Reproducibility snapshot / 重現資料快照
 
-This is the **2026-10-14 certificate snapshot**, published at fixed commit [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10) in [srg-gegenbauer-counting](https://github.com/SelenaJXWANG/srg-gegenbauer-counting). No DOI or arXiv identifier has been assigned. The fixed snapshot preserves the original proof data; the current manuscript adds public repository references without changing the printed certificate tables. The fixed certificate material is identified by [certificate_inputs.sha256](../extras/certificate_inputs.sha256). Its SHA-256 digest is:
+This is the **2026-10-14 certificate snapshot**, published at fixed commit [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10) in [srg-gegenbauer-counting](https://github.com/SelenaJXWANG/srg-gegenbauer-counting). The accompanying preprint is [arXiv:2610.20259v1](https://arxiv.org/abs/2610.20259v1), DOI [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259). The current main PDF is copied directly from arXiv; its TeX and all 64 fixed inputs match the archived sources. See [the version record](../paper/README.md). The fixed snapshot preserves the original proof data; the current manuscript adds public repository references without changing the printed certificate tables. The fixed certificate material is identified by [certificate_inputs.sha256](../extras/certificate_inputs.sha256). Its SHA-256 digest is:
 
 ```text
 58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b
@@ -56,7 +56,7 @@ Optional fresh search uses `python3 code/srg.py discover` and the dependencies i
 
 ## 繁體中文
 
-本資料稱為 **2026-10-14 證書快照**，已公開於固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。尚未分配 DOI 或 arXiv 編號。目前文章修訂只加入公開來源連結，證書數值表維持不變。上述 SHA-256 識別固定證書輸入清單，涵蓋 64 份數學資料、精確核驗引擎及入口／路徑轉接器；不涵蓋論文、文件、產生的報告或可選數值搜尋。因而文章可印出此雜湊，不會形成 PDF 自己雜湊自己的循環。整份發行資料另有 `extras/SHA256SUMS`。
+本資料稱為 **2026-10-14 證書快照**，已公開於固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。預印本已公開為 [arXiv:2610.20259v1](https://arxiv.org/abs/2610.20259v1)，DOI 為 [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259)。主文 PDF 直接取自 arXiv；TeX 與 64 份固定輸入亦已逐位元核對。目前文章修訂只加入公開來源連結，證書數值表維持不變。上述 SHA-256 識別固定證書輸入清單，涵蓋 64 份數學資料、精確核驗引擎及入口／路徑轉接器；不涵蓋論文、文件、產生的報告或可選數值搜尋。因而文章可印出此雜湊，不會形成 PDF 自己雜湊自己的循環。整份發行資料另有 `extras/SHA256SUMS`。
 
 十組參數的入口列於上表與機器可讀索引。540、550、703、1344 的短證書直接從實際主文 TeX 讀取，不能只把較早 JSON 當成本文係數；1344 的獨立構造就在專用核驗程式，並非遺漏 JSON。405 普通計數證書與早期結構證書也不能混用。
 

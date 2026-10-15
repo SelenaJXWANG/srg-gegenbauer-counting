@@ -1,10 +1,12 @@
 # 透過 Gegenbauer 正性與強正則圖計數證明不存在性
 
-[English](README.md) · [简体中文](README_zh-CN.md) · [主文](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) · [405 補充資料](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf)
+[English](README.md) · [简体中文](README_zh-CN.md) · [主文](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) · [405 補充資料](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf) · [arXiv:2610.20259](https://arxiv.org/abs/2610.20259)
 
 **Zhen-Qi Liao、Jiaxin Wang、Wei-Hsuan Yu、Jianfeng Cai**
 
-文章日期：**2026-10-14**
+文章日期：**2026-10-14** · **[arXiv:2610.20259v1 [math.CO]](https://arxiv.org/abs/2610.20259v1)**
+
+倉庫主文 PDF 與 arXiv v1 的官方 PDF 逐位元一致。主文 TeX、405 補充 TeX 及全部 64 份固定證書／核驗輸入也與 arXiv 原始檔包一致。詳見[版本核對記錄](paper/README.md)與 [BibTeX 引用](paper/citation.bib)。
 
 本專案展示結合 Gegenbauer 正性與強正則圖計數資訊的共同方法，用來同時處理多組參數，並探討半正定規劃與強正則圖計數的關聯。數值 SDP 解為候選組合提供指引；本文給出的有理數係數經過另行重建與精確核驗，再代入對偶形式，得到明確的矛盾式。讀者可以直接閱讀數學推導，不需要重新執行求解器。精確核驗程式提供有限算術的獨立核對。
 
@@ -33,7 +35,7 @@
 
 主文對每組參數都給出明確矛盾。補充資料收錄篇幅較長的 405 函數與係數表，以及五點模型的所有次數比較。405 的兩份記錄分開存放：`ordinary_counting_certificate/` 是本篇使用的普通計數證明；`earlier_structural_certificate/` 是含額外零計數來源的早期替代證書。兩者不能混用，也不另算兩組排除結果。
 
-本資料為 **2026-10-14 證書快照**，已公開於固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。主文與補充文件已加入公開來源連結，證書數值表維持不變；尚未分配 DOI 或 arXiv 編號。固定輸入清單是 [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256)，SHA-256 為 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`。涵蓋範圍及證書入口詳見[重現記錄](docs/reproducibility_snapshot.md)。
+本資料為 **2026-10-14 證書快照**，已公開於固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。主文與補充文件已加入公開來源連結，證書數值表維持不變；預印本編號為 [arXiv:2610.20259](https://arxiv.org/abs/2610.20259)，DOI 為 [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259)。固定輸入清單是 [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256)，SHA-256 為 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`。涵蓋範圍及證書入口詳見[重現記錄](docs/reproducibility_snapshot.md)。
 
 ## 精確核驗
 

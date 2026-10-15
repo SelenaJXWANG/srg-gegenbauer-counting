@@ -1,5 +1,5 @@
 {
-  "description": "Public paths and pinned source hashes. Mathematical inputs and engines are byte-preserved. Paper entries identify the 2026-10-14 repository-link revision; previous_sha256 retains its initial-publication hash. Runtime paths exist only in isolated temporary trees.",
+  "description": "Public paths and pinned source hashes. Mathematical inputs and engines are byte-preserved. The main PDF is the official arXiv:2610.20259v1 PDF; its TeX is unchanged. Previous publication and repository-link PDF hashes are retained. See extras/arxiv_version.json.",
   "entries": [
     {
       "source": "data/legacy_ten/atlas_graphs.txt",
@@ -463,9 +463,15 @@
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf",
       "path": "paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf",
       "runtime_path": "paper/srg_counting_gegenbauer_article_1014.pdf",
-      "sha256": "ad2d9c067adb6f6bdc0f6ab1e275474d692092038885cde031c2eb39646b3d5b",
+      "sha256": "c9f662c9809a8dc19ece15d1408773eb9857d701e451a8f6e0e27a08c98f373b",
       "previous_sha256": "f3eefcc94e6f32c3be3a3d1514ae0e7d105316b7a7f4a8875c3bd58d9c919a43",
-      "documentation_revision": "GitHub repository links added; mathematical tables unchanged"
+      "documentation_revision": "GitHub repository links added; mathematical tables unchanged",
+      "sha256_history": [
+        {
+          "revision": "repository-link PDF before arXiv synchronization",
+          "sha256": "ad2d9c067adb6f6bdc0f6ab1e275474d692092038885cde031c2eb39646b3d5b"
+        }
+      ]
     },
     {
       "source": "final_article/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex",

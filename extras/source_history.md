@@ -25,3 +25,9 @@ The article and supplement are copied with title-and-full-date filenames. The ma
 ## Repository-link manuscript revision (14 October 2026)
 
 The article and 405 supplement now identify the public repository and the fixed certificate snapshot `85cd39b74c9ef8a61ab746deb1102af3eeae7e10`. Repository and certificate links, the replay command, licensing, and recorded hosted verification references were added. Mathematical inputs, verification engines, printed coefficient tables, and mathematical display environments are unchanged. Updated PDF/TeX hashes are pinned in `file_mapping.json`; their preceding publication hashes are retained as `previous_sha256`. The full checks for this documentation revision are in `results/release_checks/documentation_update_verification.json`.
+
+## arXiv v1 synchronization (15 October 2026)
+
+The published preprint is [arXiv:2610.20259v1](https://arxiv.org/abs/2610.20259v1), DOI [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259). The main TeX already matched the deposited top-level source byte for byte. The 405 supplement TeX and all 64 pinned mathematical/verification files also matched arXiv's ancillary repository. The main PDF was replaced with the official arXiv PDF; no TeX, certificate or verification engine changed. `file_mapping.json` records the new PDF hash and retains earlier PDF hashes. Version provenance and the comparison scope are recorded in [arxiv_version.json](arxiv_version.json) and [paper/README.md](../paper/README.md).
+
+The five-stage exact rerun passed; see [arxiv_v1_sync_verification.json](../results/release_checks/arxiv_v1_sync_verification.json).

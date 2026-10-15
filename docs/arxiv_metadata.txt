@@ -1,3 +1,8 @@
+Published preprint: arXiv:2610.20259v1 [math.CO]
+URL: https://arxiv.org/abs/2610.20259
+DOI: https://doi.org/10.48550/arXiv.2610.20259
+Submitted: 14 October 2026
+
 Title:
 Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting
 
@@ -20,4 +25,4 @@ Code, certificates and verification programs: https://github.com/SelenaJXWANG/sr
 Fixed certificate snapshot:
 https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10
 
-The source ZIP contains both standalone TeX files and 00README.json, with PDFLaTeX compilation ordered as main article followed by the 405 supplement. It has not yet been processed by the arXiv submission system.
+The source ZIP contains both standalone TeX files and 00README.json, with PDFLaTeX compilation ordered as main article followed by the 405 supplement. This convenience ZIP is not a byte-for-byte copy of the deposited archive: arXiv v1 compiles only the main TeX as the top-level document and stores the supplement and repository under anc/. Both TeX files are identical. See paper/README.md.

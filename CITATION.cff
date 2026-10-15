@@ -21,6 +21,9 @@ keywords:
 preferred-citation:
   type: unpublished
   title: "Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting"
+  url: "https://arxiv.org/abs/2610.20259"
+  doi: "10.48550/arXiv.2610.20259"
+  date-published: 2026-10-14
   authors:
     - family-names: Liao
       given-names: Zhen-Qi
@@ -31,4 +34,4 @@ preferred-citation:
     - family-names: Cai
       given-names: Jianfeng
   year: 2026
-  notes: "Manuscript dated 14 October 2026. Code: MIT; paper and certificates: CC BY 4.0. Repository: SelenaJXWANG/srg-gegenbauer-counting; fixed certificate snapshot: 85cd39b74c9ef8a61ab746deb1102af3eeae7e10. No release, arXiv identifier or DOI is assigned."
+  notes: "arXiv:2610.20259v1 [math.CO], submitted 14 October 2026. Code: MIT; paper and certificates: CC BY 4.0. Repository: SelenaJXWANG/srg-gegenbauer-counting; fixed certificate snapshot: 85cd39b74c9ef8a61ab746deb1102af3eeae7e10."

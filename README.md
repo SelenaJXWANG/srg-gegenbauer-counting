@@ -1,10 +1,12 @@
 # Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting
 
-[繁體中文](README_zh-TW.md) · [简体中文](README_zh-CN.md) · [Main article](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) · [405 supplement](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf)
+[繁體中文](README_zh-TW.md) · [简体中文](README_zh-CN.md) · [Main article](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) · [405 supplement](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf) · [arXiv:2610.20259](https://arxiv.org/abs/2610.20259)
 
 **Zhen-Qi Liao, Jiaxin Wang, Wei-Hsuan Yu, Jianfeng Cai**
 
-Article date: **2026-10-14**
+Article date: **2026-10-14** · **[arXiv:2610.20259v1 [math.CO]](https://arxiv.org/abs/2610.20259v1)**
+
+The [main article PDF](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) is an exact copy of the arXiv v1 PDF. Its TeX source, the 405 supplement source, and all 64 fixed certificate/verification inputs match the arXiv source archive. See the [version record](paper/README.md) and [BibTeX citation](paper/citation.bib).
 
 This repository accompanies a common method for excluding strongly regular graph parameters and studying the relationship between semidefinite programming and strongly regular graph counting. It combines Gegenbauer positivity with exact counting information. Numerical SDP solutions guide candidate combinations; the supplied rational coefficients are reconstructed and checked separately before being used in explicit dual contradiction identities. The printed arguments can be read as mathematics without running a solver. The optional exact verifier independently checks their finite arithmetic.
 
@@ -33,7 +35,7 @@ The work naturally extends Liao–Yu. It gives certificates for the following te
 
 The main article states an explicit contradiction for every parameter tuple. The supplement records the long 405 coefficient/function tables and the all-degree five-point comparison. The two 405 records are separated: `ordinary_counting_certificate/` is the proof used by this article; `earlier_structural_certificate/` is a retained alternative with extra zero-count sources. They are not interchangeable and do not count as two parameter exclusions.
 
-The **2026-10-14 certificate snapshot** is publicly available at fixed commit [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10). The article and supplement now link to this snapshot; their displayed certificate coefficients are unchanged. No DOI or arXiv identifier has been assigned. The fixed-input manifest is [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256), with SHA-256 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`. Detailed scope and the certificate entry points are in the [reproducibility record](docs/reproducibility_snapshot.md).
+The **2026-10-14 certificate snapshot** is publicly available at fixed commit [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10). The article and supplement now link to this snapshot; their displayed certificate coefficients are unchanged. The preprint is [arXiv:2610.20259](https://arxiv.org/abs/2610.20259), DOI [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259). The fixed-input manifest is [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256), with SHA-256 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`. Detailed scope and the certificate entry points are in the [reproducibility record](docs/reproducibility_snapshot.md).
 
 ## Exact verification
 
