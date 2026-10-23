@@ -6,8 +6,6 @@
 
 文章日期：**2026-10-14** · **[arXiv:2610.20259v1 [math.CO]](https://arxiv.org/abs/2610.20259v1)**
 
-仓库正文 PDF 与 arXiv v1 的官方 PDF 逐字节一致。正文 TeX、405 补充 TeX 及全部 64 份固定证书／核验输入也与 arXiv 源文件包一致。详见[版本核对记录](paper/README.md)与 [BibTeX 引用](paper/citation.bib)。
-
 本项目展示结合 Gegenbauer 正性与强正则图计数信息的统一方法，用于同时处理多组参数，并探讨半正定规划与强正则图计数之间的联系。数值 SDP 解为候选组合提供指引；本文给出的有理系数经过单独重建与精确核验，再代入对偶形式得到明确的矛盾式。读者可以直接阅读数学推导，无需重新运行求解器。精确核验程序提供对有限算术计算的独立检查。
 
 这项工作是 Liao–Yu 的自然延伸，共处理以下十组参数。“Liao–Yu 已排除”指此前的不存在性结果；本篇的证书与推导不必与此前相同。
@@ -33,7 +31,7 @@
 - [405 补充 PDF](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.pdf) 与 [TeX 源代码](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_Supplement_405_2026-10-14.tex)。
 - [记号与归一化](docs/notation.md)、[程序与论文对照](docs/code_article_alignment.md)、[精确核验说明](docs/verification.md)。
 
-正文对每组参数都给出明确矛盾。补充材料收录篇幅较长的 405 函数与系数表，以及五点模型在所有次数上的比较。405 的两份记录分开存放：`ordinary_counting_certificate/` 是本篇使用的普通计数证明；`earlier_structural_certificate/` 是包含额外零计数来源的早期替代证书。两者不能混用，也不算作两组排除结果。
+正文对每组参数都给出明确矛盾。补充材料收录篇幅较长的 405 函数与系数表，以及五点模型在所有次数上的比较。405 的两份记录分开存放：`ordinary_counting_certificate/` 为本文采用的普通计数证明，`earlier_structural_certificate/` 为早期的替代证明，包含额外的零计数依据。
 
 本资料为 **2026-10-14 证书快照**，已公开于固定提交 [85cd39b](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/tree/85cd39b74c9ef8a61ab746deb1102af3eeae7e10)。正文与补充文件已加入公开来源链接，证书数值表保持不变；预印本编号为 [arXiv:2610.20259](https://arxiv.org/abs/2610.20259)，DOI 为 [10.48550/arXiv.2610.20259](https://doi.org/10.48550/arXiv.2610.20259)。固定输入清单为 [extras/certificate_inputs.sha256](extras/certificate_inputs.sha256)，SHA-256 为 `58ebb057e5d840a1571d503bf2c3a4fc0d1854fe6c7336615eb1fc7bc0398b9b`。涵盖范围与证书入口详见[复现记录](docs/reproducibility_snapshot.md)。
 
@@ -77,7 +75,7 @@ docs/                        数学约定与使用说明
 extras/                      来源对照、沿革与文件哈希
 ```
 
-结构参考 [Liao–Yu 的复现项目](https://github.com/Wideep886/srg_sdp)（`de824a2`），另加入 `paper/`。公开文件名直接说明用途。为避免重命名影响已经核验的数学算法，原核验引擎与数学数据逐字节保留，由临时路径适配器处理历史相对路径；[来源沿革](extras/source_history.md)和[机器可读对照](extras/file_mapping.json)列出来源及其对应关系。本版本不包含旧文章或其他数值运行的替代结果。
+为确保文件重命名不影响已核验的数学算法，原计算程序和数据保持不变，并通过临时路径适配器兼容旧路径。文件来源及对应关系详见[来源沿革](extras/source_history.md)和[机器可读对照](extras/file_mapping.json)。本版本不包含对旧论文结果或其他数值实验结果的替代。
 
 ## 致谢与使用
 
