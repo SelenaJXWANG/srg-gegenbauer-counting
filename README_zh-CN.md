@@ -57,6 +57,8 @@ python3 -S code/verify.py
 
 ### 新版证据包 1.0.0
 
+`1.0.0` 是通过 GitHub Release 单独发布的新版证据包，可以独立运行。上面的仓库旧版命令用于复现 arXiv v1 快照。本节命令从新版 ZIP 的解压目录运行。压缩包含精确核验程序、证书与见证、从附表转录的 JSON 数据、83 个固定输入的 SHA-256 清单和完整核验报告。17 个阶段已全部通过，覆盖十个不存在性证书、95 个五点整数表项和 20 个列和。核验直接读取 JSON，无需安装 TeX 或运行 SDP 求解器。报告注明了转录表格的来源和核验范围。
+
 [发布页 verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [下载证据包 ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
 
 解压 ZIP 后，进入 `srg-gegenbauer-verification-1.0.0` 目录，用 Python 3.9 或更新版本运行：
