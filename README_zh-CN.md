@@ -6,7 +6,7 @@
 
 文章日期：**2026-10-14** · **[arXiv:2610.20259v1 [math.CO]](https://arxiv.org/abs/2610.20259v1)**
 
-本项目展示结合 Gegenbauer 正性与强正则图计数信息的统一方法，用于同时处理多组参数，并探讨半正定规划与强正则图计数之间的联系。数值 SDP 解为候选组合提供指引；本文给出的有理系数经过单独重建与精确核验，再代入对偶形式得到明确的矛盾式。对于四个五点证书，读者可以用《补充证书数据》D1 中的权重、系数和整数核对表手工核对矛盾式。六点和七点证书的推导见正文及补充材料，逐项复核所需的完整乘子、计数代换和见证见[验证包](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0)。精确核验程序可复算所有证书的有限算术检查。核验无需重新运行 SDP 求解器。
+本项目展示结合 Gegenbauer 正性与强正则图计数信息的统一方法，用于同时处理多组参数，并探讨半正定规划与强正则图计数之间的联系。数值 SDP 解为候选组合提供指引；本文给出的有理系数经过单独重建与精确核验，再代入对偶形式得到明确的矛盾式。对于四个五点证书，读者可以用[《补充证书数据》](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-supplementary-certificate-data-worked-example.pdf#page=1) D1 中的权重、系数和整数核对表手工核对矛盾式。六点和七点证书的推导见正文及补充材料，逐项复核所需的完整乘子、计数代换和见证见[验证包](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0)。精确核验程序可复算所有证书的有限算术检查。核验无需重新运行 SDP 求解器。
 
 这项工作是 Liao–Yu 的自然延伸，共处理以下十组参数。“Liao–Yu 已排除”指此前的不存在性结果；本篇的证书与推导不必与此前相同。
 
@@ -37,6 +37,10 @@
 
 ## 精确核验
 
+### 仓库中的旧版核验程序
+
+以下命令适用于仓库中的 arXiv v1 快照，请在仓库根目录运行。
+
 只需 **Python 3.9 及以上版本**的标准库，无需半正定规划求解器或网络连接：
 
 ```sh
@@ -50,6 +54,18 @@ python3 -S code/verify.py
 ```
 
 五个阶段依次重建十组证书，核对普通计数的 405 证明与所有次数的比较，读取实际 TeX 中的短证书与完整证书表，再比对文章的参数表、结构来源与严格有理数下界。程序在临时目录中运行，论文与证书原文件保持不变；结果写入 `results/latest_verification/`。请勿使用会关闭断言的 Python `-O` 选项。
+
+### 新版证据包 1.0.0
+
+[发布页 verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [下载证据包 ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
+
+解压 ZIP 后，进入 `srg-gegenbauer-verification-1.0.0` 目录，用 Python 3.9 或更新版本运行：
+
+```sh
+python3 -B -S code/verify_submission.py
+```
+
+程序只使用 Python 标准库，结果写入 `reports/complete_verification.json`。
 
 ## 可选数值探索
 
