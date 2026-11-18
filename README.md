@@ -8,7 +8,7 @@ Article date: **2026-10-14** · **[arXiv:2610.20259v1 [math.CO]](https://arxiv.o
 
 The [main article PDF](paper/Nonexistence_of_Strongly_Regular_Graphs_via_Gegenbauer_Positivity_and_SRG_Counting_2026-10-14.pdf) is an exact copy of the arXiv v1 PDF. Its TeX source, the 405 supplement source, and all 64 fixed certificate/verification inputs match the arXiv source archive. See the [version record](paper/README.md) and [BibTeX citation](paper/citation.bib).
 
-This repository accompanies a common method for excluding strongly regular graph parameters and studying the relationship between semidefinite programming and strongly regular graph counting. It combines Gegenbauer positivity with exact counting information. Numerical SDP solutions guide candidate combinations; the supplied rational coefficients are reconstructed and checked separately before being used in explicit dual contradiction identities. The weights, coefficients, and integer tables in Section D1 of Supplementary Certificate Data are sufficient to check the contradiction identities for the four five-point certificates by hand. Complete multipliers, affine substitutions, and witnesses for the six- and seven-point certificates are available in the [verification package](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0). The exact verifier can replay the finite arithmetic checks for all certificates. No SDP solver is needed for verification.
+This repository accompanies a common method for excluding strongly regular graph parameters and studying the relationship between semidefinite programming and strongly regular graph counting. It combines Gegenbauer positivity with exact counting information. Numerical SDP solutions guide candidate combinations; the supplied rational coefficients are reconstructed and checked separately before being used in explicit dual contradiction identities. The weights, coefficients, and integer tables in Section D1 of [Supplementary Certificate Data](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-supplementary-certificate-data-worked-example.pdf#page=1) are sufficient to check the contradiction identities for the four five-point certificates by hand. Complete multipliers, affine substitutions, and witnesses for the six- and seven-point certificates are available in the [verification package](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0). The exact verifier can replay the finite arithmetic checks for all certificates. No SDP solver is needed for verification.
 
 The work naturally extends Liao–Yu. It gives certificates for the following ten parameter tuples. “Previously excluded” refers to Liao–Yu's result; the present certificates and derivations need not coincide with theirs.
 
@@ -39,18 +39,6 @@ The **2026-10-14 certificate snapshot** is publicly available at fixed commit [8
 
 ## Exact verification
 
-### Verification package 1.0.0
-
-[Release verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [Download the verification ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
-
-Extract the ZIP, open a terminal in the extracted `srg-gegenbauer-verification-1.0.0` directory, and run the following command with Python 3.9 or later.
-
-```sh
-python3 -B -S code/verify_submission.py
-```
-
-The verifier uses only the Python standard library and writes the results to `reports/complete_verification.json`.
-
 ### Legacy verifier in the repository
 
 Run the following commands from the root of a checkout of the repository to verify the legacy snapshot.
@@ -68,6 +56,18 @@ python3 -S code/verify.py
 ```
 
 The five stages reconstruct the ten certificates, check the ordinary-counting 405 proof and its all-degree comparison, read the actual short and expanded TeX certificate tables, and compare the article's parameter/structural tables and strict rational bounds. The programs run in a temporary directory and leave the paper and certificate files unchanged. Output is written to `results/latest_verification/`. Do not use Python's `-O` option, which disables assertions.
+
+### Verification package 1.0.0
+
+[Release verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [Download the verification ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
+
+Extract the ZIP, open a terminal in the extracted `srg-gegenbauer-verification-1.0.0` directory, and run the following command with Python 3.9 or later.
+
+```sh
+python3 -B -S code/verify_submission.py
+```
+
+The verifier uses only the Python standard library and writes the results to `reports/complete_verification.json`.
 
 ## Optional numerical discovery
 
