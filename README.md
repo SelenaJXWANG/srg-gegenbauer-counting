@@ -39,6 +39,22 @@ The **2026-10-14 certificate snapshot** is publicly available at fixed commit [8
 
 ## Exact verification
 
+### Verification package 1.0.0
+
+[Release verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [Download the verification ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
+
+Extract the ZIP, open a terminal in the extracted `srg-gegenbauer-verification-1.0.0` directory, and run the following command with Python 3.9 or later.
+
+```sh
+python3 -B -S code/verify_submission.py
+```
+
+The verifier uses only the Python standard library and writes the results to `reports/complete_verification.json`.
+
+### Legacy verifier in the repository
+
+Run the following commands from the root of a checkout of the repository to verify the legacy snapshot.
+
 Python **3.9 or later**, standard library only; no SDP solver or network access is required:
 
 ```sh
