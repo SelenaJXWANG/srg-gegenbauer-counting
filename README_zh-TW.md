@@ -8,7 +8,7 @@
 
 倉庫主文 PDF 與 arXiv v1 的官方 PDF 逐位元一致。主文 TeX、405 補充 TeX 及全部 64 份固定證書／核驗輸入也與 arXiv 原始檔包一致。詳見[版本核對記錄](paper/README.md)與 [BibTeX 引用](paper/citation.bib)。
 
-本專案展示結合 Gegenbauer 正性與強正則圖計數資訊的共同方法，用來同時處理多組參數，並探討半正定規劃與強正則圖計數的關聯。數值 SDP 解為候選組合提供指引；本文給出的有理數係數經過另行重建與精確核驗，再代入對偶形式，得到明確的矛盾式。讀者可以直接閱讀數學推導，不需要重新執行求解器。精確核驗程式提供有限算術的獨立核對。
+本專案展示結合 Gegenbauer 正性與強正則圖計數資訊的共同方法，用來同時處理多組參數，並探討半正定規劃與強正則圖計數的關聯。數值 SDP 解為候選組合提供指引；本文給出的有理數係數經過另行重建與精確核驗，再代入對偶形式，得到明確的矛盾式。對於四個五點證書，讀者可用[《補充證書資料》](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-supplementary-certificate-data-worked-example.pdf#page=1) D1 的權重、係數及整數核對表手動核對矛盾式。六點與七點證書的推導見正文及補充材料，逐項複核所需的完整乘子、計數代換及見證可在[核驗套件](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) 查閱。精確核驗程式可重算這些有限算術檢查。核驗無須重新執行 SDP 求解器。
 
 這項工作是 Liao–Yu 的自然延伸，共處理以下十組參數。「Liao–Yu 已排除」指先前的不存在性結果；本篇的證書與推導不必與先前相同。
 
@@ -39,6 +39,10 @@
 
 ## 精確核驗
 
+### 儲存庫中的舊版核驗程式
+
+以下指令適用於儲存庫中的 arXiv v1 快照，請在儲存庫根目錄執行。
+
 只需 **Python 3.9 以上版本**的標準函式庫，不需半正定規劃求解器或網路：
 
 ```sh
@@ -52,6 +56,18 @@ python3 -S code/verify.py
 ```
 
 五個階段依序重建十組證書，核對普通計數的 405 證明與所有次數比較，讀取實際 TeX 中的短證書與完整證書表，再比對文章的參數表、結構來源與嚴格有理數下界。程式在暫存目錄執行，論文與證書原檔不變；結果寫入 `results/latest_verification/`。請勿使用會關閉斷言的 Python `-O` 選項。
+
+### 新版證據套件 1.0.0
+
+[發行頁 verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [下載證據套件 ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
+
+解壓縮 ZIP 後，進入 `srg-gegenbauer-verification-1.0.0` 目錄，用 Python 3.9 或更新版本執行：
+
+```sh
+python3 -B -S code/verify_submission.py
+```
+
+程式只使用 Python 標準函式庫，結果寫入 `reports/complete_verification.json`。
 
 ## 可選數值探索
 
