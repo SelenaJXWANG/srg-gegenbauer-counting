@@ -59,6 +59,8 @@ The five stages reconstruct the ten certificates, check the ordinary-counting 40
 
 ### Verification package 1.0.0
 
+Version 1.0.0 is a new, self-contained evidence package distributed as a GitHub Release asset. The legacy commands above reproduce the earlier arXiv v1 snapshot from a repository checkout. Run the new verifier from the directory extracted from the release ZIP. The package carries the exact verifier, certificate and witness data, transcribed tables, a SHA-256 manifest for 83 fixed inputs, and the verification report. All 17 stages passed, covering ten nonexistence certificates, 95 five-point integer table entries, and 20 column sums. The verifier reads JSON and requires neither TeX nor an SDP solver. The report records the scope and provenance of the transcribed tables.
+
 [Release verification-v1.0.0](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/tag/verification-v1.0.0) · [Download the verification ZIP](https://github.com/SelenaJXWANG/srg-gegenbauer-counting/releases/download/verification-v1.0.0/srg-gegenbauer-verification-1.0.0.zip)
 
 Extract the ZIP, open a terminal in the extracted `srg-gegenbauer-verification-1.0.0` directory, and run the following command with Python 3.9 or later.
